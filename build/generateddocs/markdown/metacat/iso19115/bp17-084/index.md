@@ -407,27 +407,27 @@ original example
                     owc:href "http://185.52.193.7/wps-proxy/" ;
                     owc:method "POST" ] ],
         [ owc:code <http://www.opengis.net/spec/owc-geojson/1.0/req/wcs> ;
-            owc:operations [ owc:code <file:///github/workspace/GetCapabilities> ;
-                    owc:href "http://131.176.196.55/wcs?service=WCS&Request=GetCapabilities" ;
-                    owc:method "GET" ],
-                [ owc:code <file:///github/workspace/DescribeCoverage> ;
+            owc:operations [ owc:code <file:///github/workspace/DescribeCoverage> ;
                     owc:href "http://131.176.196.55/wcs?service=WCS&Request=DescribeCoverage&version=2.0.0&CoverageId=LE7_RGB" ;
                     owc:method "GET" ;
-                    owc:type "application/xml" ] ] ;
+                    owc:type "application/xml" ],
+                [ owc:code <file:///github/workspace/GetCapabilities> ;
+                    owc:href "http://131.176.196.55/wcs?service=WCS&Request=GetCapabilities" ;
+                    owc:method "GET" ] ] ;
     dcat:theme <http://gcmdservices.gsfc.nasa.gov/kms/concept/03f0c0a3-04a7-4ef8-8ec0-3c2266510815>,
         <http://gcmdservices.gsfc.nasa.gov/kms/concept/c7a09e9f-3c99-4b31-a521-313c379ba2b4>,
         <http://www.eionet.europa.eu/gemet/concept/3650> ;
     prov:wasGeneratedBy [ a <file:///github/workspace/AcquisitionInformation> ;
             dcat:endDate "2003-12-31T00:00:00Z" ;
             dcat:startDate "1999-07-01T00:00:00Z" ;
-            prov:used [ eop:id "http://gcmdservices.gsfc.nasa.gov/kms/concept/4dbe7764-a2ea-4a19-b754-696c35ac3205" ;
-                    eop:instrumentShortName "ETM" ;
-                    eop:sensorType eop:OPTICAL ;
-                    eop:type "Instrument" ],
-                [ eop:id "http://gcmdservices.gsfc.nasa.gov/kms/concept/c7a09e9f-3c99-4b31-a521-313c379ba2b4" ;
+            prov:used [ eop:id "http://gcmdservices.gsfc.nasa.gov/kms/concept/c7a09e9f-3c99-4b31-a521-313c379ba2b4" ;
                     eop:platformSerialIdentifier "7" ;
                     eop:platformShortName "Landsat" ;
-                    eop:type "Platform" ] ] ;
+                    eop:type "Platform" ],
+                [ eop:id "http://gcmdservices.gsfc.nasa.gov/kms/concept/4dbe7764-a2ea-4a19-b754-696c35ac3205" ;
+                    eop:instrumentShortName "ETM" ;
+                    eop:sensorType eop:OPTICAL ;
+                    eop:type "Instrument" ] ] ;
     foaf:isPrimaryTopicOf [ a dcat:CatalogRecord ;
             dct:issued "1999-07-01T00:00:00Z" ;
             dct:language <http://id.loc.gov/vocabulary/iso639-1/en> ;
