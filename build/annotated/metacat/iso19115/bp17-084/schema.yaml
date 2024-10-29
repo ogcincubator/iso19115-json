@@ -1,0 +1,826 @@
+title: GeoJSON encoding of EO Collection metadata
+description: 'Definition of document with EO Collection metadata in GeoJSON encoding.  Note
+  that numbers in the instance should not be surrounded by double-quotes to validate
+  against this schema. '
+allOf:
+- $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/feature-lenient/schema.yaml
+- properties:
+    properties:
+      $ref: '#/$defs/Properties'
+      x-jsonld-id: '@nest'
+$defs:
+  LinkOGC:
+    $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml
+  Link:
+    description: OGC 14-055r2
+    type: object
+    properties:
+      href:
+        type: string
+        format: uri
+        x-jsonld-id: '@id'
+      type:
+        description: MIME type
+        type: string
+        x-jsonld-id: '@type'
+      title:
+        type: string
+        x-jsonld-id: http://purl.org/dc/terms/title
+      length:
+        type: integer
+        minimum: 0
+        x-jsonld-id: http://www.w3.org/2005/Atom/length
+      lang:
+        description: RFC-3066
+        type: string
+        x-jsonld-id: http://purl.org/dc/terms/language
+        x-jsonld-type: '@id'
+        x-jsonld-base: http://id.loc.gov/vocabulary/iso639-1/
+    required:
+    - href
+  Links:
+    title: Links
+    description: OGC 14-055r2
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+        - Links
+        x-jsonld-id: '@type'
+    patternProperties:
+      ^(profiles|alternates|via|previews)$:
+        description: OGC 14-055r2
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/$defs/Link'
+      ^(search|describedby|related)$:
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/$defs/Link'
+    additionalProperties:
+      type: array
+      minItems: 1
+      items:
+        $ref: '#/$defs/Link'
+  Properties:
+    title: Properties
+    type: object
+    allOf:
+    - type: object
+      properties:
+        type:
+          type: string
+          enum:
+          - Properties
+          x-jsonld-id: '@type'
+        isPrimaryTopicOf:
+          $ref: '#/$defs/MetadataInformation'
+          x-jsonld-id: http://xmlns.com/foaf/0.1/isPrimaryTopicOf
+        temporal:
+          $ref: '#/$defs/TemporalExtent'
+          x-jsonld-id: http://purl.org/dc/terms/temporal
+        spatial:
+          $ref: '#/$defs/Location'
+          x-jsonld-id: http://purl.org/dc/terms/spatial
+        acquisitionInformation:
+          description: OGC 17-003
+          type: array
+          items:
+            $ref: '#/$defs/AcquisitionInformation'
+          x-jsonld-id: http://www.w3.org/ns/prov#wasGeneratedBy
+        productInformation:
+          $ref: '#/$defs/ProductInformation'
+          x-jsonld-id: http://www.opengis.net/ont/eo-geojson/1.0/productInformation
+    - $ref: '#/$defs/DataIdentification'
+    - $ref: '#/$defs/DescriptiveKeywords'
+    - $ref: '#/$defs/RelatedUrl'
+  Offering:
+    title: Offering
+    description: Offering as defined in OGC 14-055r2
+    type: object
+    properties:
+      code:
+        type: string
+        format: uri
+        x-jsonld-id: http://www.opengis.net/ont/owc/1.0/code
+        x-jsonld-type: '@id'
+      operations:
+        type: array
+        items:
+          $ref: '#/$defs/Operation'
+        x-jsonld-id: http://www.opengis.net/ont/owc/1.0/operations
+      contents:
+        type: array
+        x-jsonld-id: http://www.opengis.net/ont/owc/1.0/contents
+      styles:
+        type: array
+        x-jsonld-id: http://www.opengis.net/ont/owc/1.0/styles
+    required:
+    - code
+  Operation:
+    description: OGC 14-055r2
+    type: object
+    properties:
+      code:
+        type: string
+        x-jsonld-id: http://www.opengis.net/ont/owc/1.0/code
+        x-jsonld-type: '@id'
+      method:
+        type: string
+        enum:
+        - GET
+        - POST
+        - PUT
+        - HEAD
+        - PATCH
+        - DELETE
+        x-jsonld-id: http://www.opengis.net/ont/owc/1.0/method
+      type:
+        description: Media type
+        type: string
+        x-jsonld-id: http://www.opengis.net/ont/owc/1.0/type
+      href:
+        type: string
+        format: uri
+        x-jsonld-id: http://www.opengis.net/ont/owc/1.0/href
+      request:
+        type: object
+        x-jsonld-id: http://www.opengis.net/ont/owc/1.0/request
+      result:
+        type: object
+        x-jsonld-id: http://www.opengis.net/ont/owc/1.0/result
+    required:
+    - code
+    - method
+    - href
+  Agent:
+    description: vcard:Kind, foaf:Agent subset. OGC 14-055r2.
+    type: object
+    minProperties: 1
+    properties:
+      type:
+        type: string
+        enum:
+        - Individual
+        - Kind
+        - Person
+        - Organization
+        - Agent
+        x-jsonld-id: http://xmlns.com/foaf/0.1/type
+      name:
+        type: string
+        x-jsonld-id: http://xmlns.com/foaf/0.1/name
+      email:
+        type: string
+        format: email
+        x-jsonld-id: http://xmlns.com/foaf/0.1/mbox
+      uri:
+        type: string
+        format: uri
+        x-jsonld-id: http://xmlns.com/foaf/0.1/page
+        x-jsonld-type: '@id'
+  Category:
+    description: "OGC 14-055r2 \xA77.1.1.15"
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+        - Category
+        x-jsonld-id: '@type'
+      scheme:
+        type: string
+        format: uri
+        x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme
+      term:
+        type: string
+        x-jsonld-id: '@id'
+      label:
+        type: string
+        x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel
+    required:
+    - term
+    additionalProperties: false
+  DescriptiveKeywords:
+    type: object
+    properties:
+      subject:
+        description: Topic category
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/$defs/Category'
+        x-jsonld-id: http://purl.org/dc/terms/subject
+      categories:
+        description: OGC 14-055r2 - Keywords associated with a controlled vocabulary.
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/$defs/Category'
+        x-jsonld-id: http://www.w3.org/ns/dcat#theme
+      keyword:
+        description: Keywords not associated with a controlled vocabulary.
+        type: array
+        minItems: 1
+        items:
+          type: string
+          minLength: 1
+        x-jsonld-id: http://www.w3.org/ns/dcat#keyword
+  DataContact:
+    type: object
+    properties:
+      publisher:
+        description: role="publisher" (OGC 14-055r2)
+        type: string
+      authors:
+        description: role="creator" (OGC 14-055r2)
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/$defs/Agent'
+        x-jsonld-id: http://purl.org/dc/terms/creator
+      contactPoint:
+        description: Role="contact point"
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/$defs/Agent'
+        x-jsonld-id: http://www.w3.org/ns/dcat#contactPoint
+      qualifiedAttribution:
+        description: Role=other
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/$defs/Attribution'
+        x-jsonld-id: http://www.w3.org/ns/prov#qualifiedAttribution
+  MetadataInformation:
+    description: dcat:CatalogRecord
+    type: object
+    properties:
+      type:
+        description: dcat:CatalogRecord
+        type: string
+        enum:
+        - CatalogRecord
+        x-jsonld-id: '@type'
+      created:
+        description: dct:created
+        type: string
+        format: date-time
+        x-jsonld-id: http://purl.org/dc/terms/created
+      published:
+        description: dct:issued
+        type: string
+        format: date-time
+        x-jsonld-id: http://purl.org/dc/terms/issued
+      updated:
+        description: dct:modified
+        type: string
+        format: date-time
+        x-jsonld-id: http://purl.org/dc/terms/modified
+      lang:
+        description: dct:language
+        type: string
+        x-jsonld-id: http://purl.org/dc/terms/language
+        x-jsonld-type: '@id'
+        x-jsonld-base: http://id.loc.gov/vocabulary/iso639-1/
+      conformsTo:
+        $ref: '#/$defs/Standard'
+        x-jsonld-id: http://purl.org/dc/terms/conformsTo
+  DataIdentification:
+    type: object
+    allOf:
+    - type: object
+      properties:
+        kind:
+          description: dct:type
+          type: string
+          format: uri
+          x-jsonld-id: http://purl.org/dc/terms/type
+          x-jsonld-type: '@id'
+        title:
+          description: dct:title - OGC 14-055r2
+          type: string
+          x-jsonld-id: http://purl.org/dc/terms/title
+        identifier:
+          type: string
+          x-jsonld-id: http://purl.org/dc/terms/identifier
+        bibliographicCitation:
+          description: dct:bibliographicCitation
+          type: string
+          x-jsonld-id: http://purl.org/dc/terms/bibliographicCitation
+        abstract:
+          description: dct:description - OGC 14-055r2
+          type: string
+          x-jsonld-id: http://purl.org/dc/terms/description
+        provenance:
+          description: dct:ProvenanceStatement
+          type: array
+          minItems: 1
+          items:
+            $ref: '#/$defs/ProvenanceStatement'
+          x-jsonld-id: http://purl.org/dc/terms/provenance
+        wasUsedBy:
+          description: prov:Activity
+          type: array
+          minItems: 1
+          items:
+            $ref: '#/$defs/Activity'
+          x-jsonld-id: http://www.w3.org/ns/prov#wasUsedBy
+        doi:
+          description: adms:identifier
+          type: string
+          x-jsonld-id: http://www.w3.org/ns/adms#identifier
+          x-jsonld-type: '@id'
+          x-jsonld-base: https://doi.org/
+        versionInfo:
+          description: owl:versionInfo
+          type: string
+          x-jsonld-id: http://www.w3.org/2002/07/owl#versionInfo
+        versionNotes:
+          description: adms:versionNotes
+          type: string
+          x-jsonld-id: http://www.w3.org/ns/adms#versionNotes
+      required:
+      - title
+      - identifier
+    - $ref: '#/$defs/DataContact'
+    - $ref: '#/$defs/ResourceConstraints'
+    - $ref: '#/$defs/DataDates'
+  Attribution:
+    description: prov:Attribution
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+        - Attribution
+        x-jsonld-id: http://www.w3.org/2006/vcard/ns#type
+      role:
+        description: ResponsibleParty role
+        type: string
+        enum:
+        - resourceProvider
+        - custodian
+        - owner
+        - user
+        - distributor
+        - originator
+        - pointOfContact
+        - principalInvestigator
+        - processor
+        - publisher
+        - author
+        x-jsonld-id: http://purl.org/dc/terms/type
+        x-jsonld-type: '@id'
+        x-jsonld-base: http://inspire.ec.europa.eu/metadata-codelist/ResponsiblePartyRole/
+      agent:
+        type: array
+        items:
+          $ref: '#/$defs/Agent'
+        x-jsonld-id: http://www.w3.org/ns/prov#agent
+    required:
+    - role
+    - agent
+  AcquisitionParameters:
+    type: object
+    allOf:
+    - $ref: '#/$defs/TemporalExtent'
+  TemporalExtent:
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+        - PeriodOfTime
+        x-jsonld-id: '@type'
+      beginningDateTime:
+        type: string
+        format: date-time
+        x-jsonld-id: http://www.w3.org/ns/dcat#startDate
+      endingDateTime:
+        type: string
+        format: date-time
+        x-jsonld-id: http://www.w3.org/ns/dcat#endDate
+  AcquisitionInformation:
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+        - AcquisitionInformation
+        x-jsonld-id: '@type'
+      platform:
+        $ref: '#/$defs/Platform'
+        x-jsonld-id: http://www.w3.org/ns/prov#used
+      instrument:
+        $ref: '#/$defs/Instrument'
+        x-jsonld-id: http://www.w3.org/ns/prov#used
+      acquisitionParameters:
+        $ref: '#/$defs/TemporalExtent'
+        x-jsonld-id: '@nest'
+  Platform:
+    type: object
+    minProperties: 1
+    properties:
+      type:
+        type: string
+        enum:
+        - Platform
+        x-jsonld-id: http://www.opengis.net/ont/eo-geojson/1.0/type
+      id:
+        type: string
+        format: uri
+        x-jsonld-id: http://www.opengis.net/ont/eo-geojson/1.0/id
+      platformShortName:
+        type: string
+        x-jsonld-id: http://www.opengis.net/ont/eo-geojson/1.0/platformShortName
+      platformSerialIdentifier:
+        type: string
+        x-jsonld-id: http://www.opengis.net/ont/eo-geojson/1.0/platformSerialIdentifier
+      orbitType:
+        type: string
+        enum:
+        - GEO
+        - LEO
+        x-jsonld-type: '@id'
+        x-jsonld-id: http://www.opengis.net/ont/eo-geojson/1.0/orbitType
+        x-jsonld-base: http://www.opengis.net/ont/eo-geojson/1.0/
+    required:
+    - platformShortName
+    additionalProperties: false
+  Instrument:
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+        - Instrument
+        x-jsonld-id: http://www.opengis.net/ont/eo-geojson/1.0/type
+      id:
+        type: string
+        format: uri
+        x-jsonld-id: http://www.opengis.net/ont/eo-geojson/1.0/id
+      sensorType:
+        type: string
+        enum:
+        - OPTICAL
+        - RADAR
+        - ATMOSPHERIC
+        - ALTIMETRIC
+        - LIMB
+        x-jsonld-type: '@id'
+        x-jsonld-id: http://www.opengis.net/ont/eo-geojson/1.0/sensorType
+        x-jsonld-base: http://www.opengis.net/ont/eo-geojson/1.0/
+      instrumentShortName:
+        type: string
+        x-jsonld-id: http://www.opengis.net/ont/eo-geojson/1.0/instrumentShortName
+      description:
+        type: string
+        x-jsonld-id: http://purl.org/dc/terms/description
+    required:
+    - instrumentShortName
+    additionalProperties: false
+  ProductInformation:
+    description: OGC 17-003
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+        - ProductInformation
+        x-jsonld-id: http://www.opengis.net/ont/eo-geojson/1.0/type
+      processingLevel:
+        description: eop:processingLevel - OGC 17-003
+        type: string
+        enum:
+        - 1A
+        - 1B
+        - 1C
+        - '2'
+        - '3'
+        x-jsonld-id: http://www.opengis.net/ont/eo-geojson/1.0/processingLevel
+      productType:
+        description: eop:productType - OGC 17-003
+        type: array
+        items:
+          type: string
+          minLength: 1
+        x-jsonld-id: http://www.opengis.net/ont/eo-geojson/1.0/productType
+      resolution:
+        type: array
+        minItems: 1
+        items:
+          type: number
+          minimum: 0
+        x-jsonld-id: http://www.opengis.net/ont/eo-geojson/1.0/resolution
+      referenceSystemIdentifier:
+        type: string
+        x-jsonld-type: '@id'
+        x-jsonld-id: http://www.opengis.net/ont/eo-geojson/1.0/referenceSystemIdentifier
+      timeliness:
+        description: eop:timeliness - OGC 17-003
+        type: string
+        x-jsonld-id: http://www.opengis.net/ont/eo-geojson/1.0/timeliness
+  RelatedUrl:
+    type: object
+    properties:
+      links:
+        $ref: '#/$defs/Links'
+        x-jsonld-id: http://www.opengis.net/ont/owc/1.0/links
+      offerings:
+        description: OGC 14-055r2
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/$defs/Offering'
+        x-jsonld-id: http://www.w3.org/ns/dcat#endpointDescription
+    required:
+    - links
+  Location:
+    description: dct:Location (alternative representation of geometry).
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+        - Location
+        x-jsonld-id: '@type'
+      id:
+        type: string
+        format: uri
+        x-jsonld-id: '@id'
+      geometry:
+        description: locn:geometry
+        type: array
+        items:
+          description: locn:Geometry
+          type: object
+          properties:
+            type:
+              type: string
+              x-jsonld-id: '@type'
+            value:
+              type: string
+              x-jsonld-id: '@value'
+        x-jsonld-id: http://www.w3.org/ns/locn#geometry
+  ResourceConstraints:
+    type: object
+    properties:
+      rights:
+        description: "OGC 14-055r2 \xA77.1.2.7"
+        type: string
+        x-jsonld-id: http://purl.org/dc/terms/rights
+      license:
+        description: dct:LicenseDocument
+        type: array
+        items:
+          $ref: '#/$defs/LicenseDocument'
+        x-jsonld-id: http://purl.org/dc/terms/license
+      accessRights:
+        description: dct:RightsStatement
+        type: array
+        items:
+          $ref: '#/$defs/RightsStatement'
+        x-jsonld-id: http://purl.org/dc/terms/accessRights
+  LicenseDocument:
+    description: dct:LicenseDocument
+    type:
+    - object
+    - string
+    oneOf:
+    - type: object
+      properties:
+        type:
+          type: string
+          enum:
+          - LicenseDocument
+          x-jsonld-id: '@type'
+        label:
+          description: rdfs:label
+          type: string
+          x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#label
+      required:
+      - label
+    - description: '@id'
+      type: string
+      format: uri
+  RightsStatement:
+    description: dct:RightsStatement
+    type:
+    - object
+    - string
+    oneOf:
+    - type: object
+      properties:
+        type:
+          type: string
+          enum:
+          - RightsStatement
+          x-jsonld-id: '@type'
+        label:
+          description: rdfs:label
+          type: string
+          x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#label
+      required:
+      - label
+    - description: '@id'
+      type: string
+      format: uri
+  ProvenanceStatement:
+    title: dct:provenance
+    description: dct:ProvenanceStatement
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+        - ProvenanceStatement
+        x-jsonld-id: '@type'
+      label:
+        description: rdfs:label
+        type: string
+        x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#label
+    required:
+    - label
+  Activity:
+    description: prov:Activity
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+        - Activity
+        x-jsonld-id: '@type'
+      generated:
+        $ref: '#/$defs/Entity'
+        x-jsonld-id: http://www.w3.org/ns/prov#generated
+      qualifiedAssociation:
+        $ref: '#/$defs/Association'
+        x-jsonld-id: http://www.w3.org/ns/prov#qualifiedAssociation
+    required:
+    - generated
+    - qualifiedAssociation
+  Entity:
+    description: prov:Entity
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+        - Entity
+        x-jsonld-id: '@type'
+      degree:
+        type: string
+        format: uri
+        x-jsonld-id: http://purl.org/dc/terms/type
+        x-jsonld-type: '@id'
+      description:
+        type: string
+        x-jsonld-id: http://purl.org/dc/terms/description
+    required:
+    - degree
+  Association:
+    description: prov:Association
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+        - Association
+        x-jsonld-id: '@type'
+      hadPlan:
+        $ref: '#/$defs/Plan'
+        x-jsonld-id: http://www.w3.org/ns/prov#hadPlan
+    required:
+    - hadPlan
+  Plan:
+    description: prov:Plan
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+        - Plan
+        x-jsonld-id: '@type'
+      wasDerivedFrom:
+        $ref: '#/$defs/Standard'
+        x-jsonld-id: http://www.w3.org/ns/prov#wasDerivedFrom
+    required:
+    - wasDerivedFrom
+  Standard:
+    description: dct:Standard
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+        - Standard
+        x-jsonld-id: '@type'
+      title:
+        description: dct:title
+        type: string
+        x-jsonld-id: http://purl.org/dc/terms/title
+      issued:
+        description: dct:issued
+        type: string
+        format: date-time
+        x-jsonld-id: http://purl.org/dc/terms/issued
+      versionInfo:
+        description: owl:versionInfo
+        type: string
+        x-jsonld-id: http://www.w3.org/2002/07/owl#versionInfo
+    required:
+    - title
+  DataDates:
+    type: object
+    properties:
+      created:
+        description: dct:created
+        type: string
+        format: date-time
+        x-jsonld-id: http://purl.org/dc/terms/created
+      published:
+        description: dct:issued
+        type: string
+        format: date-time
+        x-jsonld-id: http://purl.org/dc/terms/issued
+      updated:
+        description: dct:modified
+        type: string
+        format: date-time
+        x-jsonld-id: http://purl.org/dc/terms/modified
+      date:
+        description: dct:date - OGC 14-055r2
+        type: string
+        x-jsonld-id: http://purl.org/dc/terms/date
+    required:
+    - updated
+x-jsonld-extra-terms:
+  LicenseDocument: http://purl.org/dc/terms/LicenseDocument
+  RightsStatement: http://purl.org/dc/terms/RightsStatement
+  ProvenanceStatement: http://purl.org/dc/terms/ProvenanceStatement
+  Activity: http://www.w3.org/ns/prov#Activity
+  Association: http://www.w3.org/ns/prov#Association
+  Entity: http://www.w3.org/ns/prov#Entity
+  Plan: http://www.w3.org/ns/prov#Plan
+  Standard: http://purl.org/dc/terms/Standard
+  CatalogRecord: http://www.w3.org/ns/dcat#CatalogRecord
+  creator: http://purl.org/dc/terms/creator
+  subtitle: http://purl.org/dc/terms/description
+  Location: http://purl.org/dc/terms/Location
+  PeriodOfType: http://purl.org/dc/terms/PeriodOfTime
+  distribution:
+    x-jsonld-id: http://www.w3.org/ns/dcat#distribution
+    x-jsonld-context:
+      label: http://www.w3.org/2000/01/rdf-schema#label
+  Distribution: http://www.w3.org/ns/dcat#Distribution
+  Links: http://www.opengis.net/ont/owc/1.0/Links
+  Link: http://www.w3.org/2005/Atom/link
+  Category: http://www.w3.org/2004/02/skos/core#Concept
+  hasGeometry: http://www.opengis.net/ont/geosparql#hasGeometry
+  asWKT: http://www.opengis.net/ont/geosparql#asWKT
+  Feature: http://www.w3.org/ns/dcat#Dataset
+  FeatureCollection: https://purl.org/geojson/vocab#FeatureCollection
+  GeometryCollection: https://purl.org/geojson/vocab#GeometryCollection
+  LineString: https://purl.org/geojson/vocab#LineString
+  MultiLineString: https://purl.org/geojson/vocab#MultiLineString
+  MultiPoint: https://purl.org/geojson/vocab#MultiPoint
+  MultiPolygon: https://purl.org/geojson/vocab#MultiPolygon
+  Point: https://purl.org/geojson/vocab#Point
+  Polygon: https://purl.org/geojson/vocab#Polygon
+  bbox:
+    x-jsonld-container: '@list'
+    x-jsonld-id: https://purl.org/geojson/vocab#bbox
+  coordinates:
+    x-jsonld-container: '@list'
+    x-jsonld-id: https://purl.org/geojson/vocab#coordinates
+  features:
+    x-jsonld-container: '@set'
+    x-jsonld-id: https://purl.org/geojson/vocab#features
+  Platform: http://www.opengis.net/ont/eo-geojson/1.0/Platform
+  Instrument: http://www.opengis.net/ont/eo-geojson/1.0/Instrument
+  ProductInformation: http://www.opengis.net/ont/eo-geojson/1.0/ProductInformation
+x-jsonld-prefixes:
+  dct: http://purl.org/dc/terms/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  prov: http://www.w3.org/ns/prov#
+  adms: http://www.w3.org/ns/adms#
+  foaf: http://xmlns.com/foaf/0.1/
+  dcat: http://www.w3.org/ns/dcat#
+  owl: http://www.w3.org/2002/07/owl#
+  gj: https://purl.org/geojson/vocab#
+  locn: http://www.w3.org/ns/locn#
+  owc: http://www.opengis.net/ont/owc/1.0/
+  atom: http://www.w3.org/2005/Atom/
+  iana: http://www.iana.org/assignments/relation/
+  skos: http://www.w3.org/2004/02/skos/core#
+  gsp: http://www.opengis.net/ont/geosparql#
+  eop: http://www.opengis.net/ont/eo-geojson/1.0/
+  vcard: http://www.w3.org/2006/vcard/ns#
+  os: http://a9.com/-/spec/opensearch/1.1/
+  xsd: http://www.w3.org/2001/XMLSchema#
+  schema: http://schema.org/

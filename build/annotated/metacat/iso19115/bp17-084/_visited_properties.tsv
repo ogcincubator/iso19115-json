@@ -1,0 +1,152 @@
+path	@id
+/type	@type
+/id	@id
+/properties	@nest
+/geometry	https://purl.org/geojson/vocab#geometry
+/geometry/type	@type
+/geometry/coordinates	https://purl.org/geojson/vocab#coordinates
+/geometry/bbox	https://purl.org/geojson/vocab#bbox
+/geometry/geometries	
+/geometry/geometries/type	@type
+/geometry/geometries/coordinates	https://purl.org/geojson/vocab#coordinates
+/geometry/geometries/bbox	https://purl.org/geojson/vocab#bbox
+/bbox	https://purl.org/geojson/vocab#bbox
+/links	http://www.w3.org/2000/01/rdf-schema#seeAlso
+/links/href	http://www.w3.org/ns/oa#hasTarget
+/links/rel	http://www.iana.org/assignments/relation
+/links/anchor	
+/links/type	http://purl.org/dc/terms/type
+/links/hreflang	http://purl.org/dc/terms/language
+/links/title	http://www.w3.org/2000/01/rdf-schema#label
+/links/length	http://purl.org/dc/terms/extent
+/featureType	@type
+/time	http://purl.org/dc/terms/time
+/time/date	http://www.w3.org/2006/time#hasTime
+/time/timestamp	http://www.w3.org/2006/time#hasTime
+/time/interval	http://www.w3.org/2006/time#hasTime
+/coordRefSys	http://www.opengis.net/def/glossary/term/CoordinateReferenceSystemCRS
+/coordRefSys/type	
+/coordRefSys/href	
+/coordRefSys/epoch	
+/place	http://purl.org/dc/terms/spatial
+/place/type	
+/place/coordRefSys	
+/place/coordinates	
+/place/bbox	
+/place/base	
+/place/lower	
+/place/upper	
+/place/prisms	
+/geometry/coordRefSys	
+/properties/type	@type
+/properties/isPrimaryTopicOf	http://xmlns.com/foaf/0.1/isPrimaryTopicOf
+/properties/isPrimaryTopicOf/type	@type
+/properties/isPrimaryTopicOf/created	http://purl.org/dc/terms/created
+/properties/isPrimaryTopicOf/published	http://purl.org/dc/terms/issued
+/properties/isPrimaryTopicOf/updated	http://purl.org/dc/terms/modified
+/properties/isPrimaryTopicOf/lang	http://purl.org/dc/terms/language
+/properties/isPrimaryTopicOf/conformsTo	http://purl.org/dc/terms/conformsTo
+/properties/isPrimaryTopicOf/conformsTo/type	@type
+/properties/isPrimaryTopicOf/conformsTo/title	http://purl.org/dc/terms/title
+/properties/isPrimaryTopicOf/conformsTo/issued	http://purl.org/dc/terms/issued
+/properties/isPrimaryTopicOf/conformsTo/versionInfo	http://www.w3.org/2002/07/owl#versionInfo
+/properties/temporal	http://purl.org/dc/terms/temporal
+/properties/temporal/type	@type
+/properties/temporal/beginningDateTime	http://www.w3.org/ns/dcat#startDate
+/properties/temporal/endingDateTime	http://www.w3.org/ns/dcat#endDate
+/properties/spatial	http://purl.org/dc/terms/spatial
+/properties/spatial/type	@type
+/properties/spatial/id	@id
+/properties/spatial/geometry	http://www.w3.org/ns/locn#geometry
+/properties/spatial/geometry/type	@type
+/properties/spatial/geometry/value	@value
+/properties/acquisitionInformation	http://www.w3.org/ns/prov#wasGeneratedBy
+/properties/acquisitionInformation/type	@type
+/properties/acquisitionInformation/platform	http://www.w3.org/ns/prov#used
+/properties/acquisitionInformation/platform/type	http://www.opengis.net/ont/eo-geojson/1.0/type
+/properties/acquisitionInformation/platform/id	http://www.opengis.net/ont/eo-geojson/1.0/id
+/properties/acquisitionInformation/platform/platformShortName	http://www.opengis.net/ont/eo-geojson/1.0/platformShortName
+/properties/acquisitionInformation/platform/platformSerialIdentifier	http://www.opengis.net/ont/eo-geojson/1.0/platformSerialIdentifier
+/properties/acquisitionInformation/platform/orbitType	http://www.opengis.net/ont/eo-geojson/1.0/orbitType
+/properties/acquisitionInformation/instrument	http://www.w3.org/ns/prov#used
+/properties/acquisitionInformation/instrument/type	http://www.opengis.net/ont/eo-geojson/1.0/type
+/properties/acquisitionInformation/instrument/id	http://www.opengis.net/ont/eo-geojson/1.0/id
+/properties/acquisitionInformation/instrument/sensorType	http://www.opengis.net/ont/eo-geojson/1.0/sensorType
+/properties/acquisitionInformation/instrument/instrumentShortName	http://www.opengis.net/ont/eo-geojson/1.0/instrumentShortName
+/properties/acquisitionInformation/instrument/description	http://purl.org/dc/terms/description
+/properties/acquisitionInformation/acquisitionParameters	@nest
+/properties/productInformation	http://www.opengis.net/ont/eo-geojson/1.0/productInformation
+/properties/productInformation/type	http://www.opengis.net/ont/eo-geojson/1.0/type
+/properties/productInformation/processingLevel	http://www.opengis.net/ont/eo-geojson/1.0/processingLevel
+/properties/productInformation/productType	http://www.opengis.net/ont/eo-geojson/1.0/productType
+/properties/productInformation/resolution	http://www.opengis.net/ont/eo-geojson/1.0/resolution
+/properties/productInformation/referenceSystemIdentifier	http://www.opengis.net/ont/eo-geojson/1.0/referenceSystemIdentifier
+/properties/productInformation/timeliness	http://www.opengis.net/ont/eo-geojson/1.0/timeliness
+/properties/kind	http://purl.org/dc/terms/type
+/properties/title	http://purl.org/dc/terms/title
+/properties/identifier	http://purl.org/dc/terms/identifier
+/properties/bibliographicCitation	http://purl.org/dc/terms/bibliographicCitation
+/properties/abstract	http://purl.org/dc/terms/description
+/properties/provenance	http://purl.org/dc/terms/provenance
+/properties/provenance/type	@type
+/properties/provenance/label	http://www.w3.org/2000/01/rdf-schema#label
+/properties/wasUsedBy	http://www.w3.org/ns/prov#wasUsedBy
+/properties/wasUsedBy/type	@type
+/properties/wasUsedBy/generated	http://www.w3.org/ns/prov#generated
+/properties/wasUsedBy/generated/type	@type
+/properties/wasUsedBy/generated/degree	http://purl.org/dc/terms/type
+/properties/wasUsedBy/generated/description	http://purl.org/dc/terms/description
+/properties/wasUsedBy/qualifiedAssociation	http://www.w3.org/ns/prov#qualifiedAssociation
+/properties/wasUsedBy/qualifiedAssociation/type	@type
+/properties/wasUsedBy/qualifiedAssociation/hadPlan	http://www.w3.org/ns/prov#hadPlan
+/properties/wasUsedBy/qualifiedAssociation/hadPlan/type	@type
+/properties/wasUsedBy/qualifiedAssociation/hadPlan/wasDerivedFrom	http://www.w3.org/ns/prov#wasDerivedFrom
+/properties/doi	http://www.w3.org/ns/adms#identifier
+/properties/versionInfo	http://www.w3.org/2002/07/owl#versionInfo
+/properties/versionNotes	http://www.w3.org/ns/adms#versionNotes
+/properties/publisher	
+/properties/authors	http://purl.org/dc/terms/creator
+/properties/authors/type	http://xmlns.com/foaf/0.1/type
+/properties/authors/name	http://xmlns.com/foaf/0.1/name
+/properties/authors/email	http://xmlns.com/foaf/0.1/mbox
+/properties/authors/uri	http://xmlns.com/foaf/0.1/page
+/properties/contactPoint	http://www.w3.org/ns/dcat#contactPoint
+/properties/qualifiedAttribution	http://www.w3.org/ns/prov#qualifiedAttribution
+/properties/qualifiedAttribution/type	http://www.w3.org/2006/vcard/ns#type
+/properties/qualifiedAttribution/role	http://purl.org/dc/terms/type
+/properties/qualifiedAttribution/agent	http://www.w3.org/ns/prov#agent
+/properties/rights	http://purl.org/dc/terms/rights
+/properties/license	http://purl.org/dc/terms/license
+/properties/license/type	@type
+/properties/license/label	http://www.w3.org/2000/01/rdf-schema#label
+/properties/accessRights	http://purl.org/dc/terms/accessRights
+/properties/accessRights/type	@type
+/properties/accessRights/label	http://www.w3.org/2000/01/rdf-schema#label
+/properties/created	http://purl.org/dc/terms/created
+/properties/published	http://purl.org/dc/terms/issued
+/properties/updated	http://purl.org/dc/terms/modified
+/properties/date	http://purl.org/dc/terms/date
+/properties/subject	http://purl.org/dc/terms/subject
+/properties/subject/type	@type
+/properties/subject/scheme	http://www.w3.org/2004/02/skos/core#inScheme
+/properties/subject/term	@id
+/properties/subject/label	http://www.w3.org/2004/02/skos/core#prefLabel
+/properties/categories	http://www.w3.org/ns/dcat#theme
+/properties/keyword	http://www.w3.org/ns/dcat#keyword
+/properties/links	http://www.opengis.net/ont/owc/1.0/links
+/properties/links/type	@type
+/properties/links/href	@id
+/properties/links/title	http://purl.org/dc/terms/title
+/properties/links/length	http://www.w3.org/2005/Atom/length
+/properties/links/lang	http://purl.org/dc/terms/language
+/properties/offerings	http://www.w3.org/ns/dcat#endpointDescription
+/properties/offerings/code	http://www.opengis.net/ont/owc/1.0/code
+/properties/offerings/operations	http://www.opengis.net/ont/owc/1.0/operations
+/properties/offerings/operations/code	http://www.opengis.net/ont/owc/1.0/code
+/properties/offerings/operations/method	http://www.opengis.net/ont/owc/1.0/method
+/properties/offerings/operations/type	http://www.opengis.net/ont/owc/1.0/type
+/properties/offerings/operations/href	http://www.opengis.net/ont/owc/1.0/href
+/properties/offerings/operations/request	http://www.opengis.net/ont/owc/1.0/request
+/properties/offerings/operations/result	http://www.opengis.net/ont/owc/1.0/result
+/properties/offerings/contents	http://www.opengis.net/ont/owc/1.0/contents
+/properties/offerings/styles	http://www.opengis.net/ont/owc/1.0/styles

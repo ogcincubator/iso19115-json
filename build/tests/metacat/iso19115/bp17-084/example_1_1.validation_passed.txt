@@ -1,0 +1,13 @@
+Validation report for ogc.metacat.iso19115.bp17-084 - Prior BP
+Generated 2024-10-29T01:14:03.640904+00:00
+=== Files ===
+Using example_1_1.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

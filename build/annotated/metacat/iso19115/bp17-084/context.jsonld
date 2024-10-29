@@ -1,0 +1,393 @@
+{
+  "@context": {
+    "type": "@type",
+    "id": "@id",
+    "properties": "@nest",
+    "geometry": "geojson:geometry",
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
+    },
+    "Feature": "geojson:Feature",
+    "FeatureCollection": "geojson:FeatureCollection",
+    "GeometryCollection": "geojson:GeometryCollection",
+    "LineString": "geojson:LineString",
+    "MultiLineString": "geojson:MultiLineString",
+    "MultiPoint": "geojson:MultiPoint",
+    "MultiPolygon": "geojson:MultiPolygon",
+    "Point": "geojson:Point",
+    "Polygon": "geojson:Polygon",
+    "features": {
+      "@container": "@set",
+      "@id": "geojson:features"
+    },
+    "links": {
+      "@context": {
+        "href": {
+          "@type": "@id",
+          "@id": "@id"
+        },
+        "rel": {
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          },
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id"
+        },
+        "hreflang": "dct:language",
+        "length": "atom:length",
+        "lang": {
+          "@context": {
+            "@base": "http://id.loc.gov/vocabulary/iso639-1/"
+          },
+          "@id": "dct:language",
+          "@type": "@id"
+        }
+      },
+      "@id": "owc:links"
+    },
+    "featureType": "@type",
+    "time": {
+      "@context": {
+        "date": {
+          "@id": "owlTime:hasTime",
+          "@type": "xsd:date"
+        },
+        "timestamp": {
+          "@id": "owlTime:hasTime",
+          "@type": "xsd:dateTime"
+        },
+        "interval": {
+          "@id": "owlTime:hasTime",
+          "@container": "@list"
+        }
+      },
+      "@id": "dct:time"
+    },
+    "coordRefSys": "http://www.opengis.net/def/glossary/term/CoordinateReferenceSystemCRS",
+    "place": "dct:spatial",
+    "Polyhedron": "geojson:Polyhedron",
+    "MultiPolyhedron": "geojson:MultiPolyhedron",
+    "Prism": {
+      "@id": "geojson:Prism",
+      "@context": {
+        "base": "geojson:prismBase",
+        "lower": "geojson:prismLower",
+        "upper": "geojson:prismUpper"
+      }
+    },
+    "MultiPrism": {
+      "@id": "geojson:MultiPrism",
+      "@context": {
+        "prisms": "geojson:prisms"
+      }
+    },
+    "coordinates": {
+      "@container": "@list",
+      "@id": "geojson:coordinates"
+    },
+    "geometries": {
+      "@id": "geojson:geometry",
+      "@container": "@list"
+    },
+    "isPrimaryTopicOf": {
+      "@context": {
+        "lang": {
+          "@context": {
+            "@base": "http://id.loc.gov/vocabulary/iso639-1/"
+          },
+          "@id": "dct:language",
+          "@type": "@id"
+        },
+        "conformsTo": {
+          "@context": {
+            "issued": "dct:issued"
+          },
+          "@id": "dct:conformsTo"
+        }
+      },
+      "@id": "foaf:isPrimaryTopicOf"
+    },
+    "temporal": {
+      "@context": {
+        "beginningDateTime": "dcat:startDate",
+        "endingDateTime": "dcat:endDate"
+      },
+      "@id": "dct:temporal"
+    },
+    "spatial": {
+      "@context": {
+        "geometry": {
+          "@context": {
+            "value": "@value"
+          },
+          "@id": "locn:geometry"
+        }
+      },
+      "@id": "dct:spatial"
+    },
+    "acquisitionInformation": {
+      "@context": {
+        "platform": {
+          "@context": {
+            "type": "eop:type",
+            "id": "eop:id",
+            "platformShortName": "eop:platformShortName",
+            "platformSerialIdentifier": "eop:platformSerialIdentifier",
+            "orbitType": {
+              "@context": {
+                "@base": "http://www.opengis.net/ont/eo-geojson/1.0/"
+              },
+              "@type": "@id",
+              "@id": "eop:orbitType"
+            }
+          },
+          "@id": "prov:used"
+        },
+        "instrument": {
+          "@context": {
+            "type": "eop:type",
+            "id": "eop:id",
+            "sensorType": {
+              "@context": {
+                "@base": "http://www.opengis.net/ont/eo-geojson/1.0/"
+              },
+              "@type": "@id",
+              "@id": "eop:sensorType"
+            },
+            "instrumentShortName": "eop:instrumentShortName",
+            "description": "dct:description"
+          },
+          "@id": "prov:used"
+        },
+        "beginningDateTime": "dcat:startDate",
+        "endingDateTime": "dcat:endDate",
+        "acquisitionParameters": "@nest"
+      },
+      "@id": "prov:wasGeneratedBy"
+    },
+    "productInformation": {
+      "@context": {
+        "type": "eop:type",
+        "processingLevel": "eop:processingLevel",
+        "productType": "eop:productType",
+        "resolution": "eop:resolution",
+        "referenceSystemIdentifier": {
+          "@type": "@id",
+          "@id": "eop:referenceSystemIdentifier"
+        },
+        "timeliness": "eop:timeliness"
+      },
+      "@id": "eop:productInformation"
+    },
+    "kind": {
+      "@id": "dct:type",
+      "@type": "@id"
+    },
+    "title": "dct:title",
+    "identifier": "dct:identifier",
+    "bibliographicCitation": "dct:bibliographicCitation",
+    "abstract": "dct:description",
+    "provenance": {
+      "@context": {
+        "label": "rdfs:label"
+      },
+      "@id": "dct:provenance"
+    },
+    "wasUsedBy": {
+      "@context": {
+        "generated": {
+          "@context": {
+            "degree": {
+              "@id": "dct:type",
+              "@type": "@id"
+            },
+            "description": "dct:description"
+          },
+          "@id": "prov:generated"
+        },
+        "qualifiedAssociation": {
+          "@context": {
+            "hadPlan": {
+              "@context": {
+                "wasDerivedFrom": {
+                  "@context": {
+                    "issued": "dct:issued"
+                  },
+                  "@id": "prov:wasDerivedFrom"
+                }
+              },
+              "@id": "prov:hadPlan"
+            }
+          },
+          "@id": "prov:qualifiedAssociation"
+        }
+      },
+      "@id": "prov:wasUsedBy"
+    },
+    "doi": {
+      "@context": {
+        "@base": "https://doi.org/"
+      },
+      "@id": "adms:identifier",
+      "@type": "@id"
+    },
+    "versionInfo": "owl:versionInfo",
+    "versionNotes": "adms:versionNotes",
+    "authors": {
+      "@context": {
+        "type": "foaf:type",
+        "name": "foaf:name",
+        "email": "foaf:mbox",
+        "uri": {
+          "@id": "foaf:page",
+          "@type": "@id"
+        }
+      },
+      "@id": "dct:creator"
+    },
+    "contactPoint": {
+      "@context": {
+        "type": "foaf:type",
+        "name": "foaf:name",
+        "email": "foaf:mbox",
+        "uri": {
+          "@id": "foaf:page",
+          "@type": "@id"
+        }
+      },
+      "@id": "dcat:contactPoint"
+    },
+    "qualifiedAttribution": {
+      "@context": {
+        "type": "vcard:type",
+        "role": {
+          "@context": {
+            "@base": "http://inspire.ec.europa.eu/metadata-codelist/ResponsiblePartyRole/"
+          },
+          "@id": "dct:type",
+          "@type": "@id"
+        },
+        "agent": {
+          "@context": {
+            "type": "foaf:type",
+            "name": "foaf:name",
+            "email": "foaf:mbox",
+            "uri": {
+              "@id": "foaf:page",
+              "@type": "@id"
+            }
+          },
+          "@id": "prov:agent"
+        }
+      },
+      "@id": "prov:qualifiedAttribution"
+    },
+    "rights": "dct:rights",
+    "license": {
+      "@context": {
+        "label": "rdfs:label"
+      },
+      "@id": "dct:license"
+    },
+    "accessRights": {
+      "@context": {
+        "label": "rdfs:label"
+      },
+      "@id": "dct:accessRights"
+    },
+    "created": "dct:created",
+    "published": "dct:issued",
+    "updated": "dct:modified",
+    "date": "dct:date",
+    "subject": {
+      "@context": {
+        "scheme": "skos:inScheme",
+        "term": "@id",
+        "label": "skos:prefLabel"
+      },
+      "@id": "dct:subject"
+    },
+    "categories": {
+      "@context": {
+        "scheme": "skos:inScheme",
+        "term": "@id",
+        "label": "skos:prefLabel"
+      },
+      "@id": "dcat:theme"
+    },
+    "keyword": "dcat:keyword",
+    "offerings": {
+      "@context": {
+        "code": {
+          "@id": "owc:code",
+          "@type": "@id"
+        },
+        "operations": {
+          "@context": {
+            "method": "owc:method",
+            "type": "owc:type",
+            "href": "owc:href",
+            "request": "owc:request",
+            "result": "owc:result"
+          },
+          "@id": "owc:operations"
+        },
+        "contents": "owc:contents",
+        "styles": "owc:styles"
+      },
+      "@id": "dcat:endpointDescription"
+    },
+    "LicenseDocument": "dct:LicenseDocument",
+    "RightsStatement": "dct:RightsStatement",
+    "ProvenanceStatement": "dct:ProvenanceStatement",
+    "Activity": "prov:Activity",
+    "Association": "prov:Association",
+    "Entity": "prov:Entity",
+    "Plan": "prov:Plan",
+    "Standard": "dct:Standard",
+    "CatalogRecord": "dcat:CatalogRecord",
+    "creator": "dct:creator",
+    "subtitle": "dct:description",
+    "Location": "dct:Location",
+    "PeriodOfType": "dct:PeriodOfTime",
+    "distribution": {
+      "@id": "dcat:distribution",
+      "@context": {
+        "label": "rdfs:label"
+      }
+    },
+    "Distribution": "dcat:Distribution",
+    "Links": "owc:Links",
+    "Link": "atom:link",
+    "Category": "skos:Concept",
+    "hasGeometry": "gsp:hasGeometry",
+    "asWKT": "gsp:asWKT",
+    "Platform": "eop:Platform",
+    "Instrument": "eop:Instrument",
+    "ProductInformation": "eop:ProductInformation",
+    "geojson": "https://purl.org/geojson/vocab#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "oa": "http://www.w3.org/ns/oa#",
+    "dct": "http://purl.org/dc/terms/",
+    "owlTime": "http://www.w3.org/2006/time#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "adms": "http://www.w3.org/ns/adms#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "gj": "https://purl.org/geojson/vocab#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "owc": "http://www.opengis.net/ont/owc/1.0/",
+    "atom": "http://www.w3.org/2005/Atom/",
+    "iana": "http://www.iana.org/assignments/relation/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "gsp": "http://www.opengis.net/ont/geosparql#",
+    "eop": "http://www.opengis.net/ont/eo-geojson/1.0/",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "os": "http://a9.com/-/spec/opensearch/1.1/",
+    "schema": "http://schema.org/",
+    "@version": 1.1
+  }
+}

@@ -7,85 +7,58 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://raw.githubusercontent.com/ogcincubator/iso19115-json/ogc.bbr.template.myFeature> a skos:Concept,
+<https://ogcincubator.github.io/ogc.metacat.iso19115.bp17-084> a skos:Concept,
         dcat:Dataset,
         bblocks:Schema ;
-    rdfs:label "Custom Feature" ;
-    dct:abstract "This examples shows a simple customisation for OGC API Feature schemas" ;
+    rdfs:label "Prior BP" ;
+    dct:abstract "This is a building block based on OGC 17-084 EO Collection GeoJSON(-LD) Encoding. " ;
     dct:created "2023-05-19T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/bblock/ogc.bbr.template.myFeature" ],
+            rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/bblock/ogc.metacat.iso19115.bp17-084" ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/build/generateddocs/json-full/bbr/template/myFeature/index.json" ],
+            rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/build/generateddocs/json-full/metacat/iso19115/bp17-084/index.json" ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/build/generateddocs/markdown/bbr/template/myFeature/index.md" ] ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/build/generateddocs/markdown/metacat/iso19115/bp17-084/index.md" ] ;
     dct:hasVersion "1.0" ;
     dct:modified "2024-10-29"^^xsd:date ;
-    dct:source <https://docs.ogc.org/is/17-069r3/17-069r3.html#_response_7> ;
-    skos:inScheme <https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/> ;
+    dct:source <https://docs.ogc.org/bp/17-084r1/17-084r1.html#toc70> ;
+    skos:inScheme <https://ogcincubator.github.io/iso19115-json/> ;
     dcat:keyword "examples",
         "feature" ;
-    bblocks:dependsOn <https://raw.githubusercontent.com/ogcincubator/iso19115-json/ogc.bbr.template.mySchema>,
-        <https://raw.githubusercontent.com/ogcincubator/iso19115-json/ogc.geo.features.feature> ;
-    bblocks:hasJsonLdContext <https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/build/annotated/bbr/template/myFeature/context.jsonld> ;
-    bblocks:hasSchema <https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/build/annotated/bbr/template/myFeature/schema.json>,
-        <https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/build/annotated/bbr/template/myFeature/schema.yaml> ;
-    bblocks:hasShaclRule <https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/_sources/mySchema/rules.shacl> ;
+    bblocks:dependsOn <https://ogcincubator.github.io/ogc.geo.json-fg.feature-lenient>,
+        <https://ogcincubator.github.io/ogc.ogc-utils.json-link> ;
+    bblocks:hasJsonLdContext <https://ogcincubator.github.io/iso19115-json/build/annotated/metacat/iso19115/bp17-084/context.jsonld> ;
+    bblocks:hasSchema <https://ogcincubator.github.io/iso19115-json/build/annotated/metacat/iso19115/bp17-084/schema.json>,
+        <https://ogcincubator.github.io/iso19115-json/build/annotated/metacat/iso19115/bp17-084/schema.yaml> ;
+    bblocks:hasSourceJsonLdContext <https://ogcincubator.github.io/iso19115-json/_sources/bp17-084/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> .
 
-<https://docs.ogc.org/is/17-069r3/17-069r3.html#_response_7> rdfs:label "OGC API - Features, Part 1, 7.16.2: Feature Response" .
+<https://docs.ogc.org/bp/17-084r1/17-084r1.html#toc70> rdfs:label "EO Collection GeoJSON(-LD) Encoding" .
 
-<https://example.com/sources/1> rdfs:label "Sample source document" .
-
-<https://raw.githubusercontent.com/ogcincubator/iso19115-json/ogc.bbr.template.mySchema> a skos:Concept,
-        dcat:Dataset,
-        bblocks:Schema ;
-    rdfs:label "My Schema" ;
-    dct:abstract "An example schema defining the set of properties of any type of object." ;
-    dct:created "2023-04-05T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/build/generateddocs/json-full/bbr/template/mySchema/index.json" ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/bblock/ogc.bbr.template.mySchema" ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/build/generateddocs/markdown/bbr/template/mySchema/index.md" ] ;
-    dct:hasVersion "0.1" ;
-    dct:modified "2024-10-29"^^xsd:date ;
-    dct:source <https://example.com/sources/1> ;
-    skos:inScheme <https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/> ;
-    dcat:keyword "templates" ;
-    bblocks:hasJsonLdContext <https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/build/annotated/bbr/template/mySchema/context.jsonld> ;
-    bblocks:hasSchema <https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/build/annotated/bbr/template/mySchema/schema.json>,
-        <https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/build/annotated/bbr/template/mySchema/schema.yaml> ;
-    bblocks:hasShaclRule <https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/_sources/mySchema/rules.shacl> ;
-    bblocks:hasSourceJsonLdContext <https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/_sources/mySchema/context.jsonld> ;
-    bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
-    bblocks:status <http://www.opengis.net/def/status/under-development> .
-
-<https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/> a skos:ConceptScheme,
+<https://ogcincubator.github.io/iso19115-json/> a skos:ConceptScheme,
         dcat:Catalog ;
-    rdfs:label "Building Blocks - My OGC Building Blocks repository" ;
-    dct:abstract """This is an example text for the abstract. It should be short and to the point.
-A "Tell me more" link will appear if there is an additional description with a longer explanation.
+    rdfs:label "Building Blocks - ISO 19115 JSON Schema options" ;
+    dct:abstract """This repository contains various test cases and examples of previous work to explore options for encoding ISO 19115 using JSON
 """ ;
-    dct:description """The description can be longer. Both **the abstract** *and the description* support Markdown,
-including [links](https://google.es).
+    dct:description """Each BuildingBlock will start using the original proposals available, but should be "refactored" to remove content duplicated from other specifications, to be replaced by references to building blocks for those specifications.
+
+This will ensure compliance - but also make the relationships transparent. It will also be easier to maintain.
 """ ;
-    skos:prefLabel "Building Blocks - My OGC Building Blocks repository" ;
-    bblocks:hasValidationReport <https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/build/tests/report.html> ;
+    skos:prefLabel "Building Blocks - ISO 19115 JSON Schema options" ;
+    bblocks:hasValidationReport <https://ogcincubator.github.io/iso19115-json/build/tests/report.html> ;
     bblocks:imports <https://opengeospatial.github.io/bblocks/register.json> .
 
 [] a prov:Activity ;
-    prov:endedAtTime "2024-10-29T00:26:21.192854"^^xsd:dateTime ;
-    prov:startedAtTime "2024-10-29T00:26:21.124956"^^xsd:dateTime ;
+    prov:endedAtTime "2024-10-29T01:14:03.723034"^^xsd:dateTime ;
+    prov:startedAtTime "2024-10-29T01:14:03.656967"^^xsd:dateTime ;
     prov:used [ a prov:Entity ;
-            dct:format "application/yaml" ;
-            rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
-        [ a prov:Entity ;
             dct:format "application/json" ;
-            dct:hasVersion "git:24ded1f7d8ea9d280b682749ec970ab4d13669cb" ;
-            rdfs:seeAlso <https://raw.githubusercontent.com/ogcincubator/iso19115-json/undefined/build/register.json> ] ;
+            dct:hasVersion "git:14c1d147e7f0c0ddd3face2c47e4eb41d22031cb" ;
+            rdfs:seeAlso <https://ogcincubator.github.io/iso19115-json/build/register.json> ],
+        [ a prov:Entity ;
+            dct:format "application/yaml" ;
+            rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
     prov:wasAssociatedWith [ a prov:Agent,
                 schema:SoftwareApplication ;
             rdfs:label "OGC-NA tools" ;
