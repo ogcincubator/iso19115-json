@@ -1,6 +1,6 @@
 {
-  "name": "Custom Feature",
-  "abstract": "This examples shows a simple customisation for OGC API Feature schemas",
+  "name": "Prior BP",
+  "abstract": "This is a building block based on OGC 17-084 EO Collection GeoJSON(-LD) Encoding. ",
   "status": "under-development",
   "dateTimeAddition": "2023-05-19T00:00:00Z",
   "itemClass": "schema",
@@ -9,8 +9,8 @@
   "dateOfLastChange": "2023-05-19",
   "sources": [
     {
-      "title": "OGC API - Features, Part 1, 7.16.2: Feature Response",
-      "link": "https://docs.ogc.org/is/17-069r3/17-069r3.html#_response_7"
+      "title": "EO Collection GeoJSON(-LD) Encoding",
+      "link": "https://docs.ogc.org/bp/17-084r1/17-084r1.html#toc70"
     }
   ],
   "maturity": "development",

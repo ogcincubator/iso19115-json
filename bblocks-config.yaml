@@ -1,18 +1,18 @@
 # A short, descriptive name of this building block collection
-name: My OGC Building Blocks repository
+name: ISO 19115 JSON Schema options
 
 # Short abstract for this collection (optional)
 abstract: |
-  This is an example text for the abstract. It should be short and to the point.
-  A "Tell me more" link will appear if there is an additional description with a longer explanation.
+  This repository contains various test cases and examples of previous work to explore options for encoding ISO 19115 using JSON
 
 # Description for this collection (optional)
 description: |
-  The description can be longer. Both **the abstract** *and the description* support Markdown,
-  including [links](https://google.es).
+  Each BuildingBlock will start using the original proposals available, but should be "refactored" to remove content duplicated from other specifications, to be replaced by references to building blocks for those specifications.
+  
+  This will ensure compliance - but also make the relationships transparent. It will also be easier to maintain.
 
 # Customize the following prefix (will be prepended to the path of the building blocks):
-identifier-prefix: ogc.bbr.template.
+identifier-prefix: ogc.metacat.iso19115
 
 # List of imports ("default" is an alias for the main OGC Building Blocks Register)
 imports:

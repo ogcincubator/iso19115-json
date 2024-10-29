@@ -1,0 +1,912 @@
+{
+  "title": "GeoJSON encoding of EO Collection metadata",
+  "description": "Definition of document with EO Collection metadata in GeoJSON encoding.  Note that numbers in the instance should not be surrounded by double-quotes to validate against this schema. ",
+  "allOf": [
+    {
+      "$ref": "bblocks://ogc.geo.json-fg.feature-lenient"
+    },
+    {
+      "properties": {
+        "properties": {
+          "$ref": "#/$defs/Properties"
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "LinkOGC": {
+      "$ref": "bblocks://ogc.ogc-utils.json-link"
+    },
+    "Link": {
+      "description": "OGC 14-055r2",
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "format": "uri"
+        },
+        "type": {
+          "description": "MIME type",
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "length": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "lang": {
+          "description": "RFC-3066",
+          "type": "string"
+        }
+      },
+      "required": [
+        "href"
+      ]
+    },
+    "Links": {
+      "title": "Links",
+      "description": "OGC 14-055r2",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Links"
+          ]
+        }
+      },
+      "patternProperties": {
+        "^(profiles|alternates|via|previews)$": {
+          "description": "OGC 14-055r2",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/Link"
+          }
+        },
+        "^(search|describedby|related)$": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/Link"
+          }
+        }
+      },
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "$ref": "#/$defs/Link"
+        }
+      }
+    },
+    "Properties": {
+      "title": "Properties",
+      "type": "object",
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Properties"
+              ]
+            },
+            "isPrimaryTopicOf": {
+              "$ref": "#/$defs/MetadataInformation"
+            },
+            "temporal": {
+              "$ref": "#/$defs/TemporalExtent"
+            },
+            "spatial": {
+              "$ref": "#/$defs/Location"
+            },
+            "acquisitionInformation": {
+              "description": "OGC 17-003",
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/AcquisitionInformation"
+              }
+            },
+            "productInformation": {
+              "$ref": "#/$defs/ProductInformation"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/DataIdentification"
+        },
+        {
+          "$ref": "#/$defs/DescriptiveKeywords"
+        },
+        {
+          "$ref": "#/$defs/RelatedUrl"
+        }
+      ]
+    },
+    "Offering": {
+      "title": "Offering",
+      "description": "Offering as defined in OGC 14-055r2",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "format": "uri"
+        },
+        "operations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Operation"
+          }
+        },
+        "contents": {
+          "type": "array"
+        },
+        "styles": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "code"
+      ]
+    },
+    "Operation": {
+      "description": "OGC 14-055r2",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string",
+          "enum": [
+            "GET",
+            "POST",
+            "PUT",
+            "HEAD",
+            "PATCH",
+            "DELETE"
+          ]
+        },
+        "type": {
+          "description": "Media type",
+          "type": "string"
+        },
+        "href": {
+          "type": "string",
+          "format": "uri"
+        },
+        "request": {
+          "type": "object"
+        },
+        "result": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "code",
+        "method",
+        "href"
+      ]
+    },
+    "Agent": {
+      "description": "vcard:Kind, foaf:Agent subset. OGC 14-055r2.",
+      "type": "object",
+      "minProperties": 1,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Individual",
+            "Kind",
+            "Person",
+            "Organization",
+            "Agent"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "Category": {
+      "description": "OGC 14-055r2 §7.1.1.15",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Category"
+          ]
+        },
+        "scheme": {
+          "type": "string",
+          "format": "uri"
+        },
+        "term": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "term"
+      ],
+      "additionalProperties": false
+    },
+    "DescriptiveKeywords": {
+      "type": "object",
+      "properties": {
+        "subject": {
+          "description": "Topic category",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/Category"
+          }
+        },
+        "categories": {
+          "description": "OGC 14-055r2 - Keywords associated with a controlled vocabulary.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/Category"
+          }
+        },
+        "keyword": {
+          "description": "Keywords not associated with a controlled vocabulary.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "DataContact": {
+      "type": "object",
+      "properties": {
+        "publisher": {
+          "description": "role=\"publisher\" (OGC 14-055r2)",
+          "type": "string"
+        },
+        "authors": {
+          "description": "role=\"creator\" (OGC 14-055r2)",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/Agent"
+          }
+        },
+        "contactPoint": {
+          "description": "Role=\"contact point\"",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/Agent"
+          }
+        },
+        "qualifiedAttribution": {
+          "description": "Role=other",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/Attribution"
+          }
+        }
+      }
+    },
+    "MetadataInformation": {
+      "description": "dcat:CatalogRecord",
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "dcat:CatalogRecord",
+          "type": "string",
+          "enum": [
+            "CatalogRecord"
+          ]
+        },
+        "created": {
+          "description": "dct:created",
+          "type": "string",
+          "format": "date-time"
+        },
+        "published": {
+          "description": "dct:issued",
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated": {
+          "description": "dct:modified",
+          "type": "string",
+          "format": "date-time"
+        },
+        "lang": {
+          "description": "dct:language",
+          "type": "string"
+        },
+        "conformsTo": {
+          "$ref": "#/$defs/Standard"
+        }
+      }
+    },
+    "DataIdentification": {
+      "type": "object",
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "description": "dct:type",
+              "type": "string",
+              "format": "uri"
+            },
+            "title": {
+              "description": "dct:title - OGC 14-055r2",
+              "type": "string"
+            },
+            "identifier": {
+              "type": "string"
+            },
+            "bibliographicCitation": {
+              "description": "dct:bibliographicCitation",
+              "type": "string"
+            },
+            "abstract": {
+              "description": "dct:description - OGC 14-055r2",
+              "type": "string"
+            },
+            "provenance": {
+              "description": "dct:ProvenanceStatement",
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/ProvenanceStatement"
+              }
+            },
+            "wasUsedBy": {
+              "description": "prov:Activity",
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/Activity"
+              }
+            },
+            "doi": {
+              "description": "adms:identifier",
+              "type": "string"
+            },
+            "versionInfo": {
+              "description": "owl:versionInfo",
+              "type": "string"
+            },
+            "versionNotes": {
+              "description": "adms:versionNotes",
+              "type": "string"
+            }
+          },
+          "required": [
+            "title",
+            "identifier"
+          ]
+        },
+        {
+          "$ref": "#/$defs/DataContact"
+        },
+        {
+          "$ref": "#/$defs/ResourceConstraints"
+        },
+        {
+          "$ref": "#/$defs/DataDates"
+        }
+      ]
+    },
+    "Attribution": {
+      "description": "prov:Attribution",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Attribution"
+          ]
+        },
+        "role": {
+          "description": "ResponsibleParty role",
+          "type": "string",
+          "enum": [
+            "resourceProvider",
+            "custodian",
+            "owner",
+            "user",
+            "distributor",
+            "originator",
+            "pointOfContact",
+            "principalInvestigator",
+            "processor",
+            "publisher",
+            "author"
+          ]
+        },
+        "agent": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Agent"
+          }
+        }
+      },
+      "required": [
+        "role",
+        "agent"
+      ]
+    },
+    "AcquisitionParameters": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/TemporalExtent"
+        }
+      ]
+    },
+    "TemporalExtent": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "PeriodOfTime"
+          ]
+        },
+        "beginningDateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "endingDateTime": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "AcquisitionInformation": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "AcquisitionInformation"
+          ]
+        },
+        "platform": {
+          "$ref": "#/$defs/Platform"
+        },
+        "instrument": {
+          "$ref": "#/$defs/Instrument"
+        },
+        "acquisitionParameters": {
+          "$ref": "#/$defs/TemporalExtent"
+        }
+      }
+    },
+    "Platform": {
+      "type": "object",
+      "minProperties": 1,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Platform"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "format": "uri"
+        },
+        "platformShortName": {
+          "type": "string"
+        },
+        "platformSerialIdentifier": {
+          "type": "string"
+        },
+        "orbitType": {
+          "type": "string",
+          "enum": [
+            "GEO",
+            "LEO"
+          ]
+        }
+      },
+      "required": [
+        "platformShortName"
+      ],
+      "additionalProperties": false
+    },
+    "Instrument": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Instrument"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "format": "uri"
+        },
+        "sensorType": {
+          "type": "string",
+          "enum": [
+            "OPTICAL",
+            "RADAR",
+            "ATMOSPHERIC",
+            "ALTIMETRIC",
+            "LIMB"
+          ]
+        },
+        "instrumentShortName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "instrumentShortName"
+      ],
+      "additionalProperties": false
+    },
+    "ProductInformation": {
+      "description": "OGC 17-003",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "ProductInformation"
+          ]
+        },
+        "processingLevel": {
+          "description": "eop:processingLevel - OGC 17-003",
+          "type": "string",
+          "enum": [
+            "1A",
+            "1B",
+            "1C",
+            "2",
+            "3"
+          ]
+        },
+        "productType": {
+          "description": "eop:productType - OGC 17-003",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "resolution": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "referenceSystemIdentifier": {
+          "type": "string"
+        },
+        "timeliness": {
+          "description": "eop:timeliness - OGC 17-003",
+          "type": "string"
+        }
+      }
+    },
+    "RelatedUrl": {
+      "type": "object",
+      "properties": {
+        "links": {
+          "$ref": "#/$defs/Links"
+        },
+        "offerings": {
+          "description": "OGC 14-055r2",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/Offering"
+          }
+        }
+      },
+      "required": [
+        "links"
+      ]
+    },
+    "Location": {
+      "description": "dct:Location (alternative representation of geometry).",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Location"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "format": "uri"
+        },
+        "geometry": {
+          "description": "locn:geometry",
+          "type": "array",
+          "items": {
+            "description": "locn:Geometry",
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "ResourceConstraints": {
+      "type": "object",
+      "properties": {
+        "rights": {
+          "description": "OGC 14-055r2 §7.1.2.7",
+          "type": "string"
+        },
+        "license": {
+          "description": "dct:LicenseDocument",
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LicenseDocument"
+          }
+        },
+        "accessRights": {
+          "description": "dct:RightsStatement",
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/RightsStatement"
+          }
+        }
+      }
+    },
+    "LicenseDocument": {
+      "description": "dct:LicenseDocument",
+      "type": [
+        "object",
+        "string"
+      ],
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "LicenseDocument"
+              ]
+            },
+            "label": {
+              "description": "rdfs:label",
+              "type": "string"
+            }
+          },
+          "required": [
+            "label"
+          ]
+        },
+        {
+          "description": "@id",
+          "type": "string",
+          "format": "uri"
+        }
+      ]
+    },
+    "RightsStatement": {
+      "description": "dct:RightsStatement",
+      "type": [
+        "object",
+        "string"
+      ],
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "RightsStatement"
+              ]
+            },
+            "label": {
+              "description": "rdfs:label",
+              "type": "string"
+            }
+          },
+          "required": [
+            "label"
+          ]
+        },
+        {
+          "description": "@id",
+          "type": "string",
+          "format": "uri"
+        }
+      ]
+    },
+    "ProvenanceStatement": {
+      "title": "dct:provenance",
+      "description": "dct:ProvenanceStatement",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "ProvenanceStatement"
+          ]
+        },
+        "label": {
+          "description": "rdfs:label",
+          "type": "string"
+        }
+      },
+      "required": [
+        "label"
+      ]
+    },
+    "Activity": {
+      "description": "prov:Activity",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Activity"
+          ]
+        },
+        "generated": {
+          "$ref": "#/$defs/Entity"
+        },
+        "qualifiedAssociation": {
+          "$ref": "#/$defs/Association"
+        }
+      },
+      "required": [
+        "generated",
+        "qualifiedAssociation"
+      ]
+    },
+    "Entity": {
+      "description": "prov:Entity",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Entity"
+          ]
+        },
+        "degree": {
+          "type": "string",
+          "format": "uri"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "degree"
+      ]
+    },
+    "Association": {
+      "description": "prov:Association",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Association"
+          ]
+        },
+        "hadPlan": {
+          "$ref": "#/$defs/Plan"
+        }
+      },
+      "required": [
+        "hadPlan"
+      ]
+    },
+    "Plan": {
+      "description": "prov:Plan",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Plan"
+          ]
+        },
+        "wasDerivedFrom": {
+          "$ref": "#/$defs/Standard"
+        }
+      },
+      "required": [
+        "wasDerivedFrom"
+      ]
+    },
+    "Standard": {
+      "description": "dct:Standard",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Standard"
+          ]
+        },
+        "title": {
+          "description": "dct:title",
+          "type": "string"
+        },
+        "issued": {
+          "description": "dct:issued",
+          "type": "string",
+          "format": "date-time"
+        },
+        "versionInfo": {
+          "description": "owl:versionInfo",
+          "type": "string"
+        }
+      },
+      "required": [
+        "title"
+      ]
+    },
+    "DataDates": {
+      "type": "object",
+      "properties": {
+        "created": {
+          "description": "dct:created",
+          "type": "string",
+          "format": "date-time"
+        },
+        "published": {
+          "description": "dct:issued",
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated": {
+          "description": "dct:modified",
+          "type": "string",
+          "format": "date-time"
+        },
+        "date": {
+          "description": "dct:date - OGC 14-055r2",
+          "type": "string"
+        }
+      },
+      "required": [
+        "updated"
+      ]
+    }
+  }
+}

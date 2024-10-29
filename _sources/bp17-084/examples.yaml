@@ -1,0 +1,17 @@
+## Prefixes will be used for all RDF Turtle resources so that they can be omitted from the actual snippets
+prefixes:
+  mynamespace: http://example.com/mythings/
+
+## List of examples
+examples:
+  - title: Landsat example from BP 17-084.
+
+    ## Markdown content that will be shown for the example.
+    content:
+     original example
+
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        # Reference to file
+        ref: https://bp.schemas.opengis.net/17-084r1/eoc-geojson/1.0/example-1-landsat.json
