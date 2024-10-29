@@ -106,7 +106,7 @@
   "name": "Building Blocks - ISO 19115 JSON Schema options",
   "abstract": "This repository contains various test cases and examples of previous work to explore options for encoding ISO 19115 using JSON\n",
   "description": "Each BuildingBlock will start using the original proposals available, but should be \"refactored\" to remove content duplicated from other specifications, to be replaced by references to building blocks for those specifications.\n\nThis will ensure compliance - but also make the relationships transparent. It will also be easier to maintain.\n",
-  "modified": "2024-10-29T01:16:26.023021",
+  "modified": "2024-10-29T01:17:24.444870",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"d42a292b30b8f9c89b07edcdc1ce6c98d4a1e6a2",

@@ -13,10 +13,10 @@
     rdfs:label "Prior BP" ;
     dct:abstract "This is a building block based on OGC 17-084 EO Collection GeoJSON(-LD) Encoding. " ;
     dct:created "2023-05-19T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/bblock/ogc.metacat.iso19115.bp17-084" ],
-        [ dct:format "application/json" ;
+    dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/build/generateddocs/json-full/metacat/iso19115/bp17-084/index.json" ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/bblock/ogc.metacat.iso19115.bp17-084" ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/build/generateddocs/markdown/metacat/iso19115/bp17-084/index.md" ] ;
     dct:hasVersion "1.0" ;
@@ -50,14 +50,14 @@ This will ensure compliance - but also make the relationships transparent. It wi
     bblocks:imports <https://opengeospatial.github.io/bblocks/register.json> .
 
 [] a prov:Activity ;
-    prov:endedAtTime "2024-10-29T01:16:27.609250"^^xsd:dateTime ;
-    prov:startedAtTime "2024-10-29T01:16:27.544091"^^xsd:dateTime ;
+    prov:endedAtTime "2024-10-29T01:17:28.119894"^^xsd:dateTime ;
+    prov:startedAtTime "2024-10-29T01:17:28.053215"^^xsd:dateTime ;
     prov:used [ a prov:Entity ;
             dct:format "application/yaml" ;
             rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
         [ a prov:Entity ;
             dct:format "application/json" ;
-            dct:hasVersion "git:a692910037b6c464506519817f6bb592032cd6d2" ;
+            dct:hasVersion "git:bc0af1de590afb0d2527094c8e7a0fc5b3f040e3" ;
             rdfs:seeAlso <https://ogcincubator.github.io/iso19115-json/build/register.json> ] ;
     prov:wasAssociatedWith [ a prov:Agent,
                 schema:SoftwareApplication ;
