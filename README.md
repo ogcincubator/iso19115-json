@@ -1,17 +1,17 @@
-# OGC Building Block template
+# workspace for building and testing ISO 19115 JSON schemas
 
-This template provides a working example of an [OGC Building Block](https:blocks.ogc.org). For more info see [the Documentation](https://ogcincubator.github.io/bblocks-docs/).
+There are multiple options and starting points for this activity, such as:
 
-This template is a working automation recipe to define, test and document a set of Building Blocks.
+- https://docs.ogc.org/bp/17-084r1/17-084r1.html
+- the ISO 19115 UML model
+- OGC API Records
+- FG-JSON Features
+- Plain GeoJSON
 
-The automation-generated documentation for this example is here: [https://opengeospatial.github.io/bblock-template/](https://opengeospatial.github.io/bblock-template/)
+Different examples and schemas can be documented here and options testes.
 
-[Examples of using this with typical applications of OGC standards](https://github.com/ogcincubator/bblocks-examples)
+## Methodology options
 
-Please replace the contents of this README with information about your Building Block(s).
-
-# How to use this template
-
-[More information on design and usage](https://github.com/opengeospatial/bblock-template/blob/master/USAGE.md)
-
-
+1. Start with OGC API Records schema and build an extension, taking and testing elements one by one from one or more starting points
+2. Try to map the 19115 UML model to a JSON schema (using Shapechange) and test it element by element
+3. ?
