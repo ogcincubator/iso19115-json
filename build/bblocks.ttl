@@ -7,6 +7,30 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<https://ogcincubator.github.io/ogc.metacat.iso19115.19115-4> a skos:Concept,
+        dcat:Dataset,
+        bblocks:Schema ;
+    rdfs:label "19115-4 WG draft" ;
+    dct:abstract "Working draft of 19115-4 TR" ;
+    dct:created "2023-05-19T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/build/generateddocs/markdown/metacat/iso19115/19115-4/index.md" ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/build/generateddocs/json-full/metacat/iso19115/19115-4/index.json" ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/bblock/ogc.metacat.iso19115.19115-4" ] ;
+    dct:hasVersion "1.0" ;
+    dct:modified "2024-11-12"^^xsd:date ;
+    skos:inScheme <https://ogcincubator.github.io/iso19115-json/> ;
+    dcat:keyword "wip" ;
+    bblocks:dependsOn <https://ogcincubator.github.io/ogc.geo.common.data_types.geojson>,
+        <https://ogcincubator.github.io/ogc.metacat.iso19115.mdb> ;
+    bblocks:hasJsonLdContext <https://ogcincubator.github.io/iso19115-json/build/annotated/metacat/iso19115/19115-4/context.jsonld> ;
+    bblocks:hasSchema <https://ogcincubator.github.io/iso19115-json/build/annotated/metacat/iso19115/19115-4/schema.json>,
+        <https://ogcincubator.github.io/iso19115-json/build/annotated/metacat/iso19115/19115-4/schema.yaml> ;
+    bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> .
+
 <https://ogcincubator.github.io/ogc.metacat.iso19115.bp17-084> a skos:Concept,
         dcat:Dataset,
         bblocks:Schema ;
@@ -15,12 +39,12 @@
     dct:created "2023-05-19T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/build/generateddocs/markdown/metacat/iso19115/bp17-084/index.md" ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/bblock/ogc.metacat.iso19115.bp17-084" ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/build/generateddocs/json-full/metacat/iso19115/bp17-084/index.json" ] ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/build/generateddocs/json-full/metacat/iso19115/bp17-084/index.json" ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/bblock/ogc.metacat.iso19115.bp17-084" ] ;
     dct:hasVersion "1.0" ;
-    dct:modified "2024-10-30"^^xsd:date ;
+    dct:modified "2024-11-12"^^xsd:date ;
     dct:source <https://docs.ogc.org/bp/17-084r1/17-084r1.html#toc70> ;
     skos:inScheme <https://ogcincubator.github.io/iso19115-json/> ;
     dcat:keyword "examples",
@@ -36,6 +60,49 @@
 
 <https://docs.ogc.org/bp/17-084r1/17-084r1.html#toc70> rdfs:label "EO Collection GeoJSON(-LD) Encoding" .
 
+<https://ogcincubator.github.io/ogc.metacat.iso19115.dqc> a skos:Concept,
+        dcat:Dataset,
+        bblocks:Schema ;
+    rdfs:label "19115-4 DQC" ;
+    dct:abstract "DQC module" ;
+    dct:created "2023-05-19T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/bblock/ogc.metacat.iso19115.dqc" ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/build/generateddocs/markdown/metacat/iso19115/dqc/index.md" ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/build/generateddocs/json-full/metacat/iso19115/dqc/index.json" ] ;
+    dct:hasVersion "1.0" ;
+    dct:modified "2024-11-12"^^xsd:date ;
+    skos:inScheme <https://ogcincubator.github.io/iso19115-json/> ;
+    dcat:keyword "wip" ;
+    bblocks:hasSchema <https://ogcincubator.github.io/iso19115-json/build/annotated/metacat/iso19115/dqc/schema.json>,
+        <https://ogcincubator.github.io/iso19115-json/build/annotated/metacat/iso19115/dqc/schema.yaml> ;
+    bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> .
+
+<https://ogcincubator.github.io/ogc.metacat.iso19115.mdb> a skos:Concept,
+        dcat:Dataset,
+        bblocks:Schema ;
+    rdfs:label "19115-4 WG MDB" ;
+    dct:abstract "MDB module" ;
+    dct:created "2023-05-19T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/bblock/ogc.metacat.iso19115.mdb" ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/build/generateddocs/json-full/metacat/iso19115/mdb/index.json" ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/iso19115-json/build/generateddocs/markdown/metacat/iso19115/mdb/index.md" ] ;
+    dct:hasVersion "1.0" ;
+    dct:modified "2024-11-12"^^xsd:date ;
+    skos:inScheme <https://ogcincubator.github.io/iso19115-json/> ;
+    dcat:keyword "wip" ;
+    bblocks:dependsOn <https://ogcincubator.github.io/ogc.metacat.iso19115.dqc> ;
+    bblocks:hasSchema <https://ogcincubator.github.io/iso19115-json/build/annotated/metacat/iso19115/mdb/schema.json>,
+        <https://ogcincubator.github.io/iso19115-json/build/annotated/metacat/iso19115/mdb/schema.yaml> ;
+    bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> .
+
 <https://ogcincubator.github.io/iso19115-json/> a skos:ConceptScheme,
         dcat:Catalog ;
     rdfs:label "Building Blocks - ISO 19115 JSON Schema options" ;
@@ -50,11 +117,11 @@ This will ensure compliance - but also make the relationships transparent. It wi
     bblocks:imports <https://opengeospatial.github.io/bblocks/register.json> .
 
 [] a prov:Activity ;
-    prov:endedAtTime "2024-10-30T23:30:43.220859"^^xsd:dateTime ;
-    prov:startedAtTime "2024-10-30T23:30:43.155066"^^xsd:dateTime ;
+    prov:endedAtTime "2024-11-12T02:12:55.468041"^^xsd:dateTime ;
+    prov:startedAtTime "2024-11-12T02:12:55.397509"^^xsd:dateTime ;
     prov:used [ a prov:Entity ;
             dct:format "application/json" ;
-            dct:hasVersion "git:28f187259a18e740e6d7f423ffdc3ab4871aa7a5" ;
+            dct:hasVersion "git:cc414f2ae54d68b6d9f04d53f944e576fa5ba68f" ;
             rdfs:seeAlso <https://ogcincubator.github.io/iso19115-json/build/register.json> ],
         [ a prov:Entity ;
             dct:format "application/yaml" ;

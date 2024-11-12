@@ -2,7 +2,7 @@
   "name": "ISO 19115 JSON Schema options",
   "abstract": "This repository contains various test cases and examples of previous work to explore options for encoding ISO 19115 using JSON\n",
   "description": "Each BuildingBlock will start using the original proposals available, but should be \"refactored\" to remove content duplicated from other specifications, to be replaced by references to building blocks for those specifications.\n\nThis will ensure compliance - but also make the relationships transparent. It will also be easier to maintain.\n",
-  "modified": "2024-10-30T23:30:38.781167",
+  "modified": "2024-11-12T02:12:52.645588",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"bff70fac492a7e2f3fe3779b0b9b150f4e315e8f",
@@ -20,6 +20,136 @@
   ],
   "bblocks": [
     {
+      "itemIdentifier": "ogc.metacat.iso19115.dqc",
+      "name": "19115-4 DQC",
+      "abstract": "DQC module",
+      "status": "under-development",
+      "dateTimeAddition": "2023-05-19T00:00:00Z",
+      "itemClass": "schema",
+      "register": "iso-tc211",
+      "version": "1.0",
+      "dateOfLastChange": "2024-11-12",
+      "sources": [],
+      "maturity": "development",
+      "scope": "unstable",
+      "dependsOn": [],
+      "tags": [
+        "wip"
+      ],
+      "highlighted": true,
+      "shaclRules": {},
+      "schema": {
+        "application/yaml": "https://ogcincubator.github.io/iso19115-json/build/annotated/metacat/iso19115/dqc/schema.yaml",
+        "application/json": "https://ogcincubator.github.io/iso19115-json/build/annotated/metacat/iso19115/dqc/schema.json"
+      },
+      "sourceSchema": "https://ogcincubator.github.io/iso19115-json/_sources/dqc/schema.json",
+      "sourceFiles": "https://ogcincubator.github.io/iso19115-json/_sources/dqc/",
+      "validationPassed": true,
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://ogcincubator.github.io/iso19115-json/build/generateddocs/markdown/metacat/iso19115/dqc/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/iso19115-json/build/generateddocs/json-full/metacat/iso19115/dqc/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://ogcincubator.github.io/iso19115-json/bblock/ogc.metacat.iso19115.dqc"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.metacat.iso19115.mdb",
+      "name": "19115-4 WG MDB",
+      "abstract": "MDB module",
+      "status": "under-development",
+      "dateTimeAddition": "2023-05-19T00:00:00Z",
+      "itemClass": "schema",
+      "register": "iso-tc211",
+      "version": "1.0",
+      "dateOfLastChange": "2024-11-12",
+      "sources": [],
+      "maturity": "development",
+      "scope": "unstable",
+      "dependsOn": [
+        "ogc.metacat.iso19115.dqc"
+      ],
+      "tags": [
+        "wip"
+      ],
+      "highlighted": true,
+      "shaclRules": {},
+      "schema": {
+        "application/yaml": "https://ogcincubator.github.io/iso19115-json/build/annotated/metacat/iso19115/mdb/schema.yaml",
+        "application/json": "https://ogcincubator.github.io/iso19115-json/build/annotated/metacat/iso19115/mdb/schema.json"
+      },
+      "sourceSchema": "https://ogcincubator.github.io/iso19115-json/_sources/mdb/schema.json",
+      "sourceFiles": "https://ogcincubator.github.io/iso19115-json/_sources/mdb/",
+      "validationPassed": true,
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://ogcincubator.github.io/iso19115-json/build/generateddocs/markdown/metacat/iso19115/mdb/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/iso19115-json/build/generateddocs/json-full/metacat/iso19115/mdb/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://ogcincubator.github.io/iso19115-json/bblock/ogc.metacat.iso19115.mdb"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.metacat.iso19115.19115-4",
+      "name": "19115-4 WG draft",
+      "abstract": "Working draft of 19115-4 TR",
+      "status": "under-development",
+      "dateTimeAddition": "2023-05-19T00:00:00Z",
+      "itemClass": "schema",
+      "register": "iso-tc211",
+      "version": "1.0",
+      "dateOfLastChange": "2024-11-12",
+      "sources": [],
+      "maturity": "development",
+      "scope": "unstable",
+      "dependsOn": [
+        "ogc.metacat.iso19115.mdb",
+        "ogc.geo.common.data_types.geojson"
+      ],
+      "tags": [
+        "wip"
+      ],
+      "highlighted": true,
+      "shaclRules": {},
+      "schema": {
+        "application/yaml": "https://ogcincubator.github.io/iso19115-json/build/annotated/metacat/iso19115/19115-4/schema.yaml",
+        "application/json": "https://ogcincubator.github.io/iso19115-json/build/annotated/metacat/iso19115/19115-4/schema.json"
+      },
+      "sourceSchema": "https://ogcincubator.github.io/iso19115-json/_sources/19115-4/schema.json",
+      "ldContext": "https://ogcincubator.github.io/iso19115-json/build/annotated/metacat/iso19115/19115-4/context.jsonld",
+      "sourceFiles": "https://ogcincubator.github.io/iso19115-json/_sources/19115-4/",
+      "validationPassed": false,
+      "testOutputs": "https://github.com/ogcincubator/iso19115-json/blob/master/build/tests/metacat/iso19115/19115-4/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://ogcincubator.github.io/iso19115-json/build/generateddocs/markdown/metacat/iso19115/19115-4/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/iso19115-json/build/generateddocs/json-full/metacat/iso19115/19115-4/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://ogcincubator.github.io/iso19115-json/bblock/ogc.metacat.iso19115.19115-4"
+        }
+      }
+    },
+    {
       "itemIdentifier": "ogc.metacat.iso19115.bp17-084",
       "name": "Prior BP",
       "abstract": "This is a building block based on OGC 17-084 EO Collection GeoJSON(-LD) Encoding. ",
@@ -28,7 +158,7 @@
       "itemClass": "schema",
       "register": "ogc-building-block-examples",
       "version": "1.0",
-      "dateOfLastChange": "2024-10-30",
+      "dateOfLastChange": "2024-11-12",
       "sources": [
         {
           "title": "EO Collection GeoJSON(-LD) Encoding",

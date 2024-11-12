@@ -1,0 +1,5 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://example.org/schema.json
+allOf:
+- $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/geojson/schema.yaml
+- $ref: https://ogcincubator.github.io/iso19115-json/build/annotated/metacat/iso19115/mdb/schema.yaml#/$defs/MD_Metadata
