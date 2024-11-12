@@ -1,0 +1,20 @@
+{
+  "name": "19115-4 WG draft",
+  "abstract": "Working draft of 19115-4 TR",
+  "status": "under-development",
+  "dateTimeAddition": "2023-05-19T00:00:00Z",
+  "itemClass": "schema",
+  "register": "iso-tc211",
+  "version": "1.0",
+  "dateOfLastChange": "2023-05-19",
+  "sources": [
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "dependsOn": [
+  ],
+  "tags": [
+    "wip"
+  ],
+  "highlighted": true
+}

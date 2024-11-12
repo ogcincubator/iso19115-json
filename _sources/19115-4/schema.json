@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schema.json",
+  "allOf": [
+    { "$ref": "https://geojson.org/schema/Feature.json" },
+    { "$ref": "bblocks://ogc.metacat.iso19115.mdb#/$defs/MD_Metadata" }
+  ]
+}

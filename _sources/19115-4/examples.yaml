@@ -1,0 +1,17 @@
+## Prefixes will be used for all RDF Turtle resources so that they can be omitted from the actual snippets
+prefixes:
+  eg: http://example.org/
+
+## List of examples
+examples:
+  - title: WG-example
+
+    ## Markdown content that will be shown for the example.
+    content:
+     Example used to scope profile of 19115 for JSON schema. Source is a Geoscience Australia catalog entry,
+
+    ## List of code snippets for this example
+    snippets:
+      - language: json
+        # Reference to file
+        ref: examples/GA_Soils_PHPlusDQ_edit.json
