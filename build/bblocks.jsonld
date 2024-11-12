@@ -106,7 +106,7 @@
   "name": "Building Blocks - ISO 19115 JSON Schema options",
   "abstract": "This repository contains various test cases and examples of previous work to explore options for encoding ISO 19115 using JSON\n",
   "description": "Each BuildingBlock will start using the original proposals available, but should be \"refactored\" to remove content duplicated from other specifications, to be replaced by references to building blocks for those specifications.\n\nThis will ensure compliance - but also make the relationships transparent. It will also be easier to maintain.\n",
-  "modified": "2024-11-12T02:12:52.645588",
+  "modified": "2024-11-12T02:46:37.491653",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"bff70fac492a7e2f3fe3779b0b9b150f4e315e8f",
@@ -292,8 +292,8 @@
       "maturity": "development",
       "scope": "unstable",
       "dependsOn": [
-        "ogc.geo.json-fg.feature-lenient",
-        "ogc.ogc-utils.json-link"
+        "ogc.ogc-utils.json-link",
+        "ogc.geo.json-fg.feature-lenient"
       ],
       "tags": [
         "feature",
