@@ -106,7 +106,7 @@
   "name": "Building Blocks - ISO 19115 JSON Schema options",
   "abstract": "This repository contains various test cases and examples of previous work to explore options for encoding ISO 19115 using JSON\n",
   "description": "Each BuildingBlock will start using the original proposals available, but should be \"refactored\" to remove content duplicated from other specifications, to be replaced by references to building blocks for those specifications.\n\nThis will ensure compliance - but also make the relationships transparent. It will also be easier to maintain.\n",
-  "modified": "2024-11-12T02:46:37.491653",
+  "modified": "2024-11-13T05:00:41.396992",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"bff70fac492a7e2f3fe3779b0b9b150f4e315e8f",
@@ -137,7 +137,7 @@
       "itemClass": "schema",
       "register": "iso-tc211",
       "version": "1.0",
-      "dateOfLastChange": "2024-11-12",
+      "dateOfLastChange": "2024-11-13",
       "sources": [],
       "maturity": "development",
       "scope": "unstable",
@@ -183,7 +183,7 @@
       "itemClass": "schema",
       "register": "iso-tc211",
       "version": "1.0",
-      "dateOfLastChange": "2024-11-12",
+      "dateOfLastChange": "2024-11-13",
       "sources": [],
       "maturity": "development",
       "scope": "unstable",
@@ -231,7 +231,7 @@
       "itemClass": "schema",
       "register": "iso-tc211",
       "version": "1.0",
-      "dateOfLastChange": "2024-11-12",
+      "dateOfLastChange": "2024-11-13",
       "sources": [],
       "maturity": "development",
       "scope": "unstable",
@@ -282,7 +282,7 @@
       "itemClass": "schema",
       "register": "ogc-building-block-examples",
       "version": "1.0",
-      "dateOfLastChange": "2024-11-12",
+      "dateOfLastChange": "2024-11-13",
       "sources": [
         {
           "title": "EO Collection GeoJSON(-LD) Encoding",

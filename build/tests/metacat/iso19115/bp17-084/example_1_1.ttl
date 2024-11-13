@@ -43,14 +43,14 @@
     prov:wasGeneratedBy [ a <file:///github/workspace/AcquisitionInformation> ;
             dcat:endDate "2003-12-31T00:00:00Z" ;
             dcat:startDate "1999-07-01T00:00:00Z" ;
-            prov:used [ eop:id "http://gcmdservices.gsfc.nasa.gov/kms/concept/4dbe7764-a2ea-4a19-b754-696c35ac3205" ;
-                    eop:instrumentShortName "ETM" ;
-                    eop:sensorType eop:OPTICAL ;
-                    eop:type "Instrument" ],
-                [ eop:id "http://gcmdservices.gsfc.nasa.gov/kms/concept/c7a09e9f-3c99-4b31-a521-313c379ba2b4" ;
+            prov:used [ eop:id "http://gcmdservices.gsfc.nasa.gov/kms/concept/c7a09e9f-3c99-4b31-a521-313c379ba2b4" ;
                     eop:platformSerialIdentifier "7" ;
                     eop:platformShortName "Landsat" ;
-                    eop:type "Platform" ] ] ;
+                    eop:type "Platform" ],
+                [ eop:id "http://gcmdservices.gsfc.nasa.gov/kms/concept/4dbe7764-a2ea-4a19-b754-696c35ac3205" ;
+                    eop:instrumentShortName "ETM" ;
+                    eop:sensorType eop:OPTICAL ;
+                    eop:type "Instrument" ] ] ;
     foaf:isPrimaryTopicOf [ a dcat:CatalogRecord ;
             dct:issued "1999-07-01T00:00:00Z" ;
             dct:language <http://id.loc.gov/vocabulary/iso639-1/en> ;
