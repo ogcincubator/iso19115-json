@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<!-- what about namespaces of 19115-4 and dataquality -->
+<ShapeChangeConfiguration xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1" xsi:schemaLocation="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1 http://shapechange.net/resources/schema/ShapeChangeConfiguration.xsd" xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+	<input>
+	    <parameter name="excludedPackages" value="Original 19115 packages,Original 19157"/>
+		<parameter name="inputModelType" value="EA7" />
+		<parameter name="inputFile" value="ea\subset.qea" />
+		<parameter name="tmpDirectory" value="tmp" />
+	<!--    <parameter name="appSchemaName" value="ISO 19115-1-4-core JSON" /> -->
+		<parameter name="checkingConstraints" value="disabled"/>
+        <parameter name="constraintCreationForProperties" value="false"/>
+        <parameter name="addTaggedValues" value="*"/>
+        <parameter name="ignoreEncodingRuleTaggedValues" value="false"/>
+        <parameter name="representTaggedValues" value=""/>
+		<xi:include href="http://shapechange.net/resources/config/StandardAliases.xml" />
+ <!--       <packages> -->
+            <!-- added by JE, in order for the additional schemas to be recognized by ShapeChange -->
+ <!--           <PackageInfo packageName="Registratiegegevens" ns="https://geonovum.nl/Registratiegegevens" nsabr="reg" version="0.1" xsdDocument="reg.xsd"/>
+            <PackageInfo packageName="Adres" ns="https://geonovum.nl/Adres" nsabr="adr" version="0.1" xsdDocument="adres.xsd"/>
+        </packages> -->
+	<!-- <packages>
+	    <PackageInfo packageName="ISO 19157-1-4-core JSON" ns="http://example.com/dqc" nsabr="dqc" xsdDocument="dqc.xsd" version="1.0"/>
+	    <PackageInfo packageName="ISO 19115-1-4-core JSON" ns="http://example.com/mdb" nsabr="mdb" xsdDocument="mdb.xsd" version="1.0"/>
+	</packages> -->															 
+	</input>
+	<log>
+		<parameter name="reportLevel" value="INFO" />
+		<parameter name="logFile" value="log.xml" />
+	</log>
+	<targets>
+<!-- ======= -->
+        <!-- Plain JSON -->
+        <!-- ======= -->
+        <Target class="de.interactive_instruments.ShapeChange.Target.JSON.JsonSchemaTarget" mode="enabled" inputs="flattened">
+            <targetParameter name="outputDirectory" value="plainJSON" />
+            <targetParameter name="jsonSchemaVersion" value="2020-12"/>
+            <targetParameter name="sortedOutput" value="true"/>
+            <targetParameter name="entityTypeName" value="@type"/>
+            <targetParameter name="useAnchorsInLinksToGeneratedSchemaDefinitions" value="false"/>
+            <targetParameter name="measureObjectUri" value="http://example.org/jsonschema/measure.json"/>
+            <targetParameter name="byReferenceFormat" value="uri-reference"/>
+            <targetParameter name="defaultEncodingRule" value="myPlainJson"/>
+			  <targetParameter name="baseJsonSchemaDefinitionForObjectTypes" value="https://geojson.org/schema/Feature.json"/>
+            <targetParameter name="baseJsonSchemaDefinitionForObjectTypes_encodingInfos" value="idMemberPath=id;idMemberTypes=string,number;idMemberRequired=false"/>
+            <targetParameter name="inlineOrByReferenceDefault" value ="inlineOrByReference"/>
+            <rules>
+                <EncodingRule name="myPlainJson" extends="defaultPlainJson">
+                    <rule name="rule-json-prop-measure"/>
+                <rule name="rule-json-prop-inlineOrByReferenceTag"/>
+                    <rule name="rule-json-cls-codelist-link"/>
+                    <rule name="rule-json-cls-union-typeDiscriminator"/>
+                    <rule name="rule-json-cls-name-as-entityType"/>
+                </EncodingRule>
+
+            </rules>			
+            <xi:include href="config\StandardMapEntries_JSON.xml"/>
+            <xi:include href="config\StandardMapEntries_JSON_geometry_GeoJSON.xml"/>
+            <mapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">                
+                <!-- additional types not supported by GeoJSON -->                
+                <MapEntry type="GM_MultiSolid" rule="*" targetType="https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/MultiPolyhedron" param="geometry"/> 
+                <MapEntry type="GM_Solid" rule="*" targetType="https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polyhedron" param="geometry"/>                
+            </mapEntries>
+        </Target>	
+        
+        <!-- ======= -->
+        <!-- GeoJSON -->
+        <!-- ======= -->
+        <Target class="de.interactive_instruments.ShapeChange.Target.JSON.JsonSchemaTarget" mode="enabled" inputs="flattened">
+            <targetParameter name="outputDirectory" value="geojson" />
+            <targetParameter name="jsonSchemaVersion" value="2020-12"/>
+<!--            <targetParameter name="byReferenceJsonSchemaDefinition" value="https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/LinkObject"/> -->
+            <targetParameter name="sortedOutput" value="true"/>
+            <targetParameter name="baseJsonSchemaDefinitionForFeatureTypes" value="https://geojson.org/schema/Feature.json"/>
+            <targetParameter name="baseJsonSchemaDefinitionForFeatureTypes_encodingInfos" value="idMemberPath=id;idMemberTypes=string,number;idMemberRequired=false"/>
+            <targetParameter name="entityTypeName" value="@type"/>
+            <targetParameter name="useAnchorsInLinksToGeneratedSchemaDefinitions" value="true"/>
+            <targetParameter name="measureObjectUri" value="http://example.org/jsonschema/measure.json"/>
+            <targetParameter name="byReferenceFormat" value="uri-reference"/>
+            <targetParameter name="defaultEncodingRule" value="myGeoJson"/>			
+            <rules>
+                <EncodingRule name="myGeoJson" extends="defaultGeoJson">
+                    <rule name="rule-json-prop-measure"/>
+                    <rule name="rule-json-cls-primaryGeometry"/>
+                    <rule name="rule-json-prop-inlineOrByReferenceTag"/> 
+                    <rule name="rule-json-cls-codelist-link"/>
+                    <rule name="rule-json-cls-union-typeDiscriminator"/>
+                    <rule name="rule-json-cls-name-as-entityType"/>
+                </EncodingRule>
+            </rules>			
+            <xi:include href="config\StandardMapEntries_JSON.xml"/>
+            <xi:include href="config\StandardMapEntries_JSON_geometry_GeoJSON.xml"/>
+            <mapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">                
+                <!-- additional types not supported by GeoJSON -->                
+                <MapEntry type="GM_MultiSolid" rule="*" targetType="https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/MultiPolyhedron" param="geometry"/> 
+                <MapEntry type="GM_Solid" rule="*" targetType="https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polyhedron" param="geometry"/>                
+            </mapEntries>
+        </Target>
+	
+	    <!-- ======= -->
+	    <!-- XML_Schema -->
+	    <!-- ======= -->
+	    
+<!--
+	     
+	        <TargetXmlSchema class="de.interactive_instruments.ShapeChange.Target.XmlSchema.XmlSchema" mode="enabled" inputs="flattened">
+	            <targetParameter name="outputDirectory" value="testResults/xmi"/>
+	            <targetParameter name="sortedOutput" value="true"/>
+	            <targetParameter name="defaultEncodingRule" value="iso19136_2007"/>
+	            <xi:include href="config\StandardRules.xml"/>
+	            <xi:include href="config\StandardNamespaces.xml"/>
+	            <xi:include href="config\StandardMapEntries_gml31.xml"/>
+	            <xsdMapEntries>
+	                <XsdMapEntry type="URI" xsdEncodingRules="iso19136_2007" xmlPropertyType="anyURI" xmlType="anyURI" xmlTypeType="simple" xmlTypeContent="simple"/>
+	            </xsdMapEntries>
+	        </TargetXmlSchema> -->
+	      
+	        
+	        
+	 
+	    
+	<!--   
+	    <Target class="">
+	    <TargetXmlSchema class="de.interactive_instruments.ShapeChange.Target.XmlSchema.XmlSchema" inputs="flattened" mode="enabled">
+	        <targetParameter name="outputDirectory" value="xsd"/>
+	        <targetParameter name="defaultEncodingRule" value="iso19136_2007_INSPIRE_Extensions"/>
+	
+	        <xi:include href="http://shapechange.net/resources/config/StandardRules.xml"/>
+	        <xi:include href="http://shapechange.net/resources/config/StandardNamespaces.xml"/>
+	        <xi:include href="ShapeChangeStandardImports/StandardMapEntries.xml"/>
+	    </TargetXmlSchema>
+	    </Target> -->
+	    
+	    <!--
+	    <TargetXmlSchema
+	        class="de.interactive_instruments.shapechange.core.target.xmlschema.XmlSchema"
+	        inputs="flattened" mode="enabled">
+	        <targetParameter name="outputDirectory" value="results/xsd" />
+	        <targetParameter name="sortedOutput" value="true" />
+	        <targetParameter name="defaultEncodingRule" value="test" />
+	        <rules>
+	            <EncodingRule name="test" extends="iso19136_2007">
+	                <rule name="rule-xsd-cls-mixin-classes" />
+	            </EncodingRule>
+	        </rules>
+	        <xi:include href="config\StandardRules.xml"/>
+	        <xi:include href="config\StandardNamespaces.xml"/>
+	        <xi:include href="config\StandardMapEntries_gml31.xml" />
+	    </TargetXmlSchema> -->
+	     
+	    
+	    
+	</targets>
+	<transformers>
+        <Transformer class="de.interactive_instruments.ShapeChange.Transformation.Profiling.Profiler" id="json-subset" mode="enabled">
+               <parameters>
+                    <ProcessParameter name="profiles" value="json"/>
+               </parameters>
+                        <rules>
+                             <ProcessRuleSet name="profiler">    
+                                  <rule name="rule-trf-profiling-preprocessing-profilesValueConsistencyCheck"/>
+								<!-- <rule name="rule-trf-profiling-processing-explicitProfileSettings"/> -->
+                                   <rule name="rule-trf-profiling-preprocessing-modelConsistencyCheck"/>
+                                   <rule name="rule-trf-profiling-postprocessing-removeEmptyPackages"/>
+                                   <rule name="rule-trf-profiling-processing-classRemovalIncludesAllSubtypes"/>
+                             </ProcessRuleSet>
+                        </rules> 
+          </Transformer>
+
+	    <Transformer class="de.interactive_instruments.ShapeChange.Transformation.Flattening.Flattener" id="flattened" input="json-subset" mode="enabled">
+	       <parameters>
+	           <ProcessParameter name="targetNamespaceSuffix" value="/flat"/>
+	           <ProcessParameter name="flattenInheritanceIncludeRegex" value="MD_Identification|EX_GeographicExtent|CI_Party|QualityElement|PositionalAccuracy|Completeness|Metaquality|EvaluationMethod|DataEvaluation|QualityResult|Abstract_.*"/>
+				<!-- <ProcessParameter name="flattenInheritanceIncludeRegex" value="EX_GeographicExtent"/>   -->
+		   </parameters>
+	       <rules>
+	           <ProcessRuleSet name="flattener">
+	              <!-- <rule name="rule-trf-cls-dissolve-mixins"/> -->
+	           <rule name="rule-trf-cls-flatten-inheritance"/>
+	           </ProcessRuleSet>  
+	       </rules>    
+	    </Transformer>
+      </transformers>
+</ShapeChangeConfiguration>
