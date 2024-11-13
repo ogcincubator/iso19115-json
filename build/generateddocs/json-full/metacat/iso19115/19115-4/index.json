@@ -14,8 +14,8 @@
   "maturity": "development",
   "scope": "unstable",
   "dependsOn": [
-    "ogc.metacat.iso19115.mdb",
-    "ogc.geo.common.data_types.geojson"
+    "ogc.geo.common.data_types.geojson",
+    "ogc.metacat.iso19115.mdb"
   ],
   "tags": [
     "wip"
