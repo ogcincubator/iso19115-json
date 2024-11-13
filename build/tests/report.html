@@ -51,15 +51,363 @@
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2024-10-30T23:30:43.154621+00:00</small>
-                <p class="summary fw-semibold text-success">
-                    Number of passing building blocks: 1 / 1 (100%)
+            <small class="datetime">Generated at 2024-11-12T02:46:41.088933+00:00</small>
+                <p class="summary fw-semibold text-danger">
+                    Number of passing building blocks: 3 / 4 (75%)
                 </p>
             <div class="text-end small" id="expand-collapse">
                 <a href="#" class="expand-all">Expand all</a>
                 <a href="#" class="collapse-all">Collapse all</a>
             </div>
                 <div class="accordion mt-2" id="bblock-reports">
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.metacat.iso19115.dqc" id="bblock-ogc.metacat.iso19115.dqc">
+                            <h2 class="accordion-header bblock-title">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.metacat\.iso19115\.dqc">
+                                    <div class="flex-fill">
+                                        19115-4 DQC
+                                        <small class="ms-2 bblock-id">ogc.metacat.iso19115.dqc</small>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (no tests)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.metacat.iso19115.dqc">
+                                <div class="accordion-body">
+                                        <div class="alert alert-info mb-0">No tests were found for this building block.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.metacat.iso19115.mdb" id="bblock-ogc.metacat.iso19115.mdb">
+                            <h2 class="accordion-header bblock-title">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.metacat\.iso19115\.mdb">
+                                    <div class="flex-fill">
+                                        19115-4 WG MDB
+                                        <small class="ms-2 bblock-id">ogc.metacat.iso19115.mdb</small>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (no tests)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.metacat.iso19115.mdb">
+                                <div class="accordion-body">
+                                        <div class="alert alert-info mb-0">No tests were found for this building block.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.metacat.iso19115.19115-4" id="bblock-ogc.metacat.iso19115.19115-4">
+                            <h2 class="accordion-header bblock-title">
+                                <button class="accordion-button " type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.metacat\.iso19115\.19115-4">
+                                    <div class="flex-fill">
+                                        19115-4 WG draft
+                                        <small class="ms-2 bblock-id">ogc.metacat.iso19115.19115-4</small>
+                                    </div>
+
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (0% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.metacat.iso19115.19115-4">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 0 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item ">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-1"
+                                                            aria-expanded="false" aria-controls="uid-1"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="metacat/iso19115/19115-4/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-1">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: &#x27;@type&#x27; is a required property
+
+Failed validating &#x27;required&#x27; in schema[&#x27;allOf&#x27;][1][&#x27;allOf&#x27;][0][&#x27;properties&#x27;][&#x27;properties&#x27;]:
+    {&#x27;properties&#x27;: {&#x27;@type&#x27;: {&#x27;type&#x27;: &#x27;string&#x27;}},
+     &#x27;required&#x27;: [&#x27;@type&#x27;],
+     &#x27;type&#x27;: &#x27;object&#x27;}
+
+On instance[&#x27;properties&#x27;]:
+    {&#x27;alternativeMetadataReference&#x27;: [{&#x27;identifier&#x27;: [{&#x27;code&#x27;: &#x27;70105&#x27;,
+                                                       &#x27;codeSpace&#x27;: &#x27;eCatId&#x27;}],
+                                       &#x27;title&#x27;: &#x27;Geoscience Australia &#x27;
+                                                &#x27;Products Catalogue (eCat) &#x27;
+                                                &#x27;– Short identifier for &#x27;
+                                                &#x27;metadata record.&#x27;}],
+     &#x27;contact&#x27;: [{&#x27;party&#x27;: [{&#x27;contactInfo&#x27;: [{&#x27;address&#x27;: [{&#x27;administrativeArea&#x27;: &#x27;ACT&#x27;,
+                                                           &#x27;city&#x27;: &#x27;Canberra&#x27;,
+                                                           &#x27;country&#x27;: &#x27;Australia&#x27;,
+                                                           &#x27;deliveryPoint&#x27;: [&#x27;Cnr &#x27;
+                                                                             &#x27;Jerrabomberra &#x27;
+                                                                             &#x27;Ave &#x27;
+                                                                             &#x27;and &#x27;
+                                                                             &#x27;Hindmarsh &#x27;
+                                                                             &#x27;Dr&#x27;,
+                                                                             &#x27;GPO &#x27;
+                                                                             &#x27;Box &#x27;
+                                                                             &#x27;378&#x27;],
+                                                           &#x27;electronicMailAddress&#x27;: [&#x27;clientservices@ga.gov.au&#x27;],
+                                                           &#x27;postalCode&#x27;: &#x27;2601&#x27;}],
+                                              &#x27;phone&#x27;: {&#x27;voice&#x27;: &#x27;1800 800 &#x27;
+                                                                 &#x27;173&#x27;}}],
+                             &#x27;name&#x27;: &#x27;Commonwealth of Australia &#x27;
+                                     &#x27;(Geoscience Australia)&#x27;,
+                             &#x27;type&#x27;: &#x27;CI_Organisation&#x27;}],
+                  &#x27;role&#x27;: &#x27;pointOfContact&#x27;}],
+     &#x27;dateInfo&#x27;: {&#x27;creation&#x27;: &#x27;2010-02-04T00:00:00&#x27;,
+                  &#x27;revision&#x27;: &#x27;2018-04-20T06:19:51&#x27;},
+     &#x27;defaultLocale&#x27;: {&#x27;characterEncoding&#x27;: &#x27;utf8&#x27;, &#x27;language&#x27;: &#x27;eng&#x27;},
+     &#x27;identificationInfo&#x27;: {&#x27;abstract&#x27;: &#x27;Data gathered in the field during &#x27;
+                                        &#x27;the sample collection phase of &#x27;
+                                        &#x27;the National Geochemical Survey &#x27;
+                                        &#x27;of Australia (NGSA) has been used &#x27;
+                                        &#x27;to compile the Preliminary Soil &#x27;
+                                        &#x27;pH map of Australia. \n&#x27;
+                                        &#x27;                    The map, &#x27;
+                                        &#x27;which was completed in late 2009, &#x27;
+                                        &#x27;offers a first-order estimate of &#x27;
+                                        &#x27;where acid or alkaline soil &#x27;
+                                        &#x27;conditions are likely to be &#x27;
+                                        &#x27;expected. \n&#x27;
+                                        &#x27;                    It provides &#x27;
+                                        &#x27;fundamental datasets that can be &#x27;
+                                        &#x27;used for mineral exploration and &#x27;
+                                        &#x27;resource potential evaluation, &#x27;
+                                        &#x27;environmental monitoring, landuse &#x27;
+                                        &#x27;policy development, and &#x27;
+                                        &#x27;geomedical studies into the &#x27;
+                                        &#x27;health of humans, animals and &#x27;
+                                        &#x27;plants.&#x27;,
+                            &#x27;citation&#x27;: {&#x27;ISBN&#x27;: &#x27;9781921672620&#x27;,
+                                         &#x27;citedResponsibleParty&#x27;: [{&#x27;party&#x27;: [{&#x27;contactInfo&#x27;: [{&#x27;contactInstructions&#x27;: &#x27;1st &#x27;
+                                                                                                                       &#x27;contact&#x27;}],
+                                                                               &#x27;name&#x27;: &#x27;de &#x27;
+                                                                                       &#x27;Caritat, &#x27;
+                                                                                       &#x27;P.&#x27;,
+                                                                               &#x27;type&#x27;: &#x27;CI_Individual&#x27;}],
+                                                                    &#x27;role&#x27;: &#x27;author&#x27;},
+                                                                   {&#x27;party&#x27;: [{&#x27;contactInfo&#x27;: [{&#x27;contactInstructions&#x27;: &#x27;2nd &#x27;
+                                                                                                                       &#x27;contact&#x27;}],
+                                                                               &#x27;name&#x27;: &#x27;Cooper, &#x27;
+                                                                                       &#x27;M.&#x27;,
+                                                                               &#x27;type&#x27;: &#x27;CI_Individual&#x27;}],
+                                                                    &#x27;role&#x27;: &#x27;author&#x27;}],
+                                         &#x27;date&#x27;: {&#x27;publication&#x27;: &#x27;2010-01-01T00:00:00&#x27;},
+                                         &#x27;identifier&#x27;: [{&#x27;code&#x27;: &#x27;https://pid.geoscience.gov.au/dataset/ga/70105&#x27;,
+                                                         &#x27;codeSpace&#x27;: &#x27;Geoscience &#x27;
+                                                                      &#x27;Australia &#x27;
+                                                                      &#x27;Persistent &#x27;
+                                                                      &#x27;Identifier&#x27;}],
+                                         &#x27;series&#x27;: {&#x27;issueIdentification&#x27;: &#x27;2010&#x27;},
+                                         &#x27;title&#x27;: &#x27;Preliminary Soil pH map &#x27;
+                                                  &#x27;of Australia&#x27;},
+                            &#x27;defaultLocale&#x27;: {&#x27;characterEncoding&#x27;: &#x27;utf8&#x27;,
+                                              &#x27;language&#x27;: &#x27;eng&#x27;},
+                            &#x27;descriptiveKeywords&#x27;: [{&#x27;keyword&#x27;: [&#x27;Data &#x27;
+                                                                 &#x27;Package&#x27;]},
+                                                    {&#x27;keyword&#x27;: [&#x27;soils&#x27;],
+                                                     &#x27;type&#x27;: &#x27;theme&#x27;},
+                                                    {&#x27;keyword&#x27;: [&#x27;mapping&#x27;],
+                                                     &#x27;type&#x27;: &#x27;theme&#x27;},
+                                                    {&#x27;keyword&#x27;: [&#x27;environmental&#x27;],
+                                                     &#x27;type&#x27;: &#x27;theme&#x27;},
+                                                    {&#x27;keyword&#x27;: [&#x27;mineral &#x27;
+                                                                 &#x27;exploration&#x27;],
+                                                     &#x27;type&#x27;: &#x27;theme&#x27;},
+                                                    {&#x27;keyword&#x27;: [&#x27;AU&#x27;]},
+                                                    {&#x27;keyword&#x27;: [&#x27;Earth &#x27;
+                                                                 &#x27;Sciences&#x27;],
+                                                     &#x27;thesaurusName&#x27;: {&#x27;ISBN&#x27;: &#x27;9780642483584&#x27;,
+                                                                       &#x27;citedResponsibleParty&#x27;: [{&#x27;party&#x27;: [{&#x27;contactInfo&#x27;: [{&#x27;onlineResource&#x27;: {&#x27;linkage&#x27;: &#x27;http://www.abs.gov.au/ausstats/abs@.nsf/Latestproducts/1297.0Main%20Features32008?opendocument&amp;tabname=Summary&amp;prodno=1297.0&amp;issue=2008&#x27;}}],
+                                                                                                             &#x27;name&#x27;: &#x27;Australian &#x27;
+                                                                                                                     &#x27;Bureau &#x27;
+                                                                                                                     &#x27;of &#x27;
+                                                                                                                     &#x27;Statistics &#x27;
+                                                                                                                     &#x27;(ABS)&#x27;,
+                                                                                                             &#x27;type&#x27;: &#x27;CI_Organisation&#x27;}],
+                                                                                                  &#x27;role&#x27;: &#x27;owner&#x27;}],
+                                                                       &#x27;date&#x27;: {&#x27;publication&#x27;: &#x27;2008-03-31T00:00:00+11:00&#x27;},
+                                                                       &#x27;onlineResource&#x27;: {&#x27;linkage&#x27;: &#x27;http://www.abs.gov.au/ausstats/abs@.nsf/Latestproducts/1297.0Main%20Features32008?opendocument&amp;tabname=Summary&amp;prodno=1297.0&amp;issue=2008&#x27;},
+                                                                       &#x27;title&#x27;: &#x27;Australian &#x27;
+                                                                                &#x27;and &#x27;
+                                                                                &#x27;New &#x27;
+                                                                                &#x27;Zealand &#x27;
+                                                                                &#x27;Standard &#x27;
+                                                                                &#x27;Research &#x27;
+                                                                                &#x27;Classification &#x27;
+                                                                                &#x27;(ANZSRC)&#x27;}},
+                                                    {&#x27;keyword&#x27;: [&#x27;Published_External&#x27;]}],
+                            &#x27;extent&#x27;: {&#x27;description&#x27;: &#x27;Australia&#x27;,
+                                       &#x27;geographicElement&#x27;: [{&#x27;geographicIdentifier&#x27;: {&#x27;code&#x27;: &#x27;Australia &#x27;
+                                                                                               &#x27;excluding &#x27;
+                                                                                               &#x27;external &#x27;
+                                                                                               &#x27;territories&#x27;},
+                                                              &#x27;type&#x27;: &#x27;EX_GeographicDescription&#x27;},
+                                                             {&#x27;eastBoundLongitude&#x27;: 156,
+                                                              &#x27;northBoundLatitude&#x27;: -10,
+                                                              &#x27;southBoundLatitude&#x27;: -44,
+                                                              &#x27;type&#x27;: &#x27;EX_GeographicBoundingBox&#x27;,
+                                                              &#x27;westBoundLongitude&#x27;: 112}]},
+                            &#x27;pointOfContact&#x27;: [{&#x27;party&#x27;: [{&#x27;contactInfo&#x27;: {&#x27;address&#x27;: [{&#x27;administrativeArea&#x27;: &#x27;ACT&#x27;,
+                                                                                        &#x27;city&#x27;: &#x27;Canberra&#x27;,
+                                                                                        &#x27;country&#x27;: &#x27;Australia&#x27;,
+                                                                                        &#x27;deliveryPoint&#x27;: [&#x27;Cnr &#x27;
+                                                                                                          &#x27;Jerrabomberra &#x27;
+                                                                                                          &#x27;Ave &#x27;
+                                                                                                          &#x27;and &#x27;
+                                                                                                          &#x27;Hindmarsh &#x27;
+                                                                                                          &#x27;Dr &#x27;
+                                                                                                          &#x27;GPO &#x27;
+                                                                                                          &#x27;Box &#x27;
+                                                                                                          &#x27;378&#x27;],
+                                                                                        &#x27;electronicMailAddress&#x27;: [&#x27;clientservices@ga.gov.au&#x27;],
+                                                                                        &#x27;postalCode&#x27;: &#x27;2601&#x27;}],
+                                                                           &#x27;individual&#x27;: [{&#x27;positionName&#x27;: &#x27;Manager &#x27;
+                                                                                                           &#x27;Client &#x27;
+                                                                                                           &#x27;Services&#x27;}],
+                                                                           &#x27;phone&#x27;: {&#x27;voice&#x27;: &#x27;1800 &#x27;
+                                                                                              &#x27;800 &#x27;
+                                                                                              &#x27;173&#x27;}},
+                                                           &#x27;name&#x27;: &#x27;Commonwealth &#x27;
+                                                                   &#x27;of &#x27;
+                                                                   &#x27;Australia &#x27;
+                                                                   &#x27;(Geoscience &#x27;
+                                                                   &#x27;Australia)&#x27;,
+                                                           &#x27;type&#x27;: &#x27;CI_Organisation&#x27;}],
+                                                &#x27;role&#x27;: &#x27;custodian&#x27;},
+                                               {&#x27;party&#x27;: [{&#x27;individual&#x27;: [{&#x27;name&#x27;: &#x27;DE &#x27;
+                                                                                   &#x27;CARITAT, &#x27;
+                                                                                   &#x27;P&#x27;}],
+                                                           &#x27;name&#x27;: &#x27;Geoscience &#x27;
+                                                                   &#x27;Australia: &#x27;
+                                                                   &#x27;MNHD&#x27;,
+                                                           &#x27;type&#x27;: &#x27;CI_Organisation&#x27;}],
+                                                &#x27;role&#x27;: &#x27;custodian&#x27;},
+                                               {&#x27;party&#x27;: [{&#x27;name&#x27;: &#x27;Commonwealth &#x27;
+                                                                   &#x27;of &#x27;
+                                                                   &#x27;Australia &#x27;
+                                                                   &#x27;(Geoscience &#x27;
+                                                                   &#x27;Australia)&#x27;,
+                                                           &#x27;type&#x27;: &#x27;CI_Organisation&#x27;}],
+                                                &#x27;role&#x27;: &#x27;owner&#x27;}],
+                            &#x27;resourceConstraints&#x27;: [{&#x27;accessConstraints&#x27;: &#x27;license&#x27;,
+                                                     &#x27;reference&#x27;: {&#x27;alternateTitle&#x27;: &#x27;CC-BY&#x27;,
+                                                                   &#x27;edition&#x27;: &#x27;4.0&#x27;,
+                                                                   &#x27;onlineResource&#x27;: [{&#x27;linkage&#x27;: &#x27;http://creativecommons.org/licenses/&#x27;,
+                                                                                       &#x27;protocol&#x27;: &#x27;WWW:LINK-1.0-http--link&#x27;}],
+                                                                   &#x27;title&#x27;: &#x27;Creative &#x27;
+                                                                            &#x27;Commons &#x27;
+                                                                            &#x27;Attribution &#x27;
+                                                                            &#x27;4.0 &#x27;
+                                                                            &#x27;International &#x27;
+                                                                            &#x27;Licence&#x27;},
+                                                     &#x27;type&#x27;: &#x27;MD_LegalConstraints&#x27;,
+                                                     &#x27;useConstraints&#x27;: &#x27;license&#x27;,
+                                                     &#x27;uuid&#x27;: &#x27;urn:ga-licences:232&#x27;},
+                                                    {&#x27;classification&#x27;: &#x27;unclassified&#x27;,
+                                                     &#x27;reference&#x27;: {&#x27;editionDate&#x27;: &#x27;2018-11-01T00:00:00&#x27;,
+                                                                   &#x27;onlineResource&#x27;: [{&#x27;linkage&#x27;: &#x27;https://www.protectivesecurity.gov.au/Pages/default.aspx&#x27;,
+                                                                                       &#x27;protocol&#x27;: &#x27;WWW:LINK-1.0-http--link&#x27;}],
+                                                                   &#x27;title&#x27;: &#x27;Australian &#x27;
+                                                                            &#x27;Government &#x27;
+                                                                            &#x27;Security &#x27;
+                                                                            &#x27;ClassificationSystem&#x27;},
+                                                     &#x27;type&#x27;: &#x27;MD_SecurityConstraints&#x27;}],
+                            &#x27;resourceFormat&#x27;: [{&#x27;formatSpecificationCitation&#x27;: {&#x27;citedResponsibleParty&#x27;: [{&#x27;party&#x27;: [{&#x27;name&#x27;: &#x27;ADOBE &#x27;
+                                                                                                                              &#x27;Inc&#x27;,
+                                                                                                                      &#x27;type&#x27;: &#x27;CI_Organisation&#x27;}],
+                                                                                                           &#x27;role&#x27;: &#x27;rightsHolder&#x27;}],
+                                                                                &#x27;edition&#x27;: &#x27;1.6&#x27;,
+                                                                                &#x27;fileDecompressionTechnique&#x27;: &#x27;UNZIP&#x27;,
+                                                                                &#x27;title&#x27;: &#x27;Portable &#x27;
+                                                                                         &#x27;Document &#x27;
+                                                                                         &#x27;Format &#x27;
+                                                                                         &#x27;(PDF)&#x27;}},
+                                               {&#x27;formatSpecificationCitation&#x27;: {&#x27;edition&#x27;: &#x27;1.0&#x27;,
+                                                                                &#x27;fileDecompressionTechnique&#x27;: &#x27;UNZIP&#x27;,
+                                                                                &#x27;title&#x27;: &#x27;Comma &#x27;
+                                                                                         &#x27;Delimitted &#x27;
+                                                                                         &#x27;Format &#x27;
+                                                                                         &#x27;(CSV)&#x27;}},
+                                               {&#x27;formatSpecificationCitation&#x27;: {&#x27;edition&#x27;: &#x27;1.0&#x27;,
+                                                                                &#x27;fileDecompressionTechnique&#x27;: &#x27;UNZIP&#x27;,
+                                                                                &#x27;title&#x27;: &#x27;ASCII &#x27;
+                                                                                         &#x27;text &#x27;
+                                                                                         &#x27;(TXT)&#x27;}}],
+                            &#x27;resourceMaintenance&#x27;: [{&#x27;maintenanceAndUpdateFrequency&#x27;: &#x27;asNeeded&#x27;}],
+                            &#x27;spatialRepresentationType&#x27;: [&#x27;textTable&#x27;,
+                                                          &#x27;vector&#x27;],
+                            &#x27;spatialResolution&#x27;: {&#x27;distance&#x27;: {&#x27;uom&#x27;: &#x27;metre&#x27;,
+                                                               &#x27;value&#x27;: 250}},
+                            &#x27;topicCategory&#x27;: &#x27;geoscientificInformation&#x27;},
+     &#x27;metadataIdentifier&#x27;: {&#x27;authority&#x27;: {&#x27;title&#x27;: &#x27;GeoNetwork UUID&#x27;},
+                            &#x27;code&#x27;: &#x27;a05f7892-efb9-7506-e044-00144fdd4fa6&#x27;,
+                            &#x27;codeSpace&#x27;: &#x27;urn:uuid:&#x27;},
+     &#x27;metadataLinkage&#x27;: [{&#x27;function&#x27;: &#x27;completeMetadata&#x27;,
+                          &#x27;linkage&#x27;: &#x27;https://ecat.ga.gov.au/geonetwork/srv/eng/catalog.search#/metadata/a05f7892-efb9-7506-e044-00144fdd4fa6&#x27;}],
+     &#x27;metadataProfile&#x27;: [{&#x27;edition&#x27;: &#x27;Version 2.0, September 2018&#x27;,
+                          &#x27;identifier&#x27;: [{&#x27;code&#x27;: &#x27;https://pid.geoscience.gov.au/dataset/ga/122551&#x27;}],
+                          &#x27;title&#x27;: &#x27;Geoscience Australia Community &#x27;
+                                   &#x27;Metadata Profile of ISO 19115-1:2014&#x27;}],
+     &#x27;metadataStandard&#x27;: [{&#x27;title&#x27;: &#x27;AU/NZS ISO 19115-1:2014&#x27;},
+                          {&#x27;title&#x27;: &#x27;ISO 19115-1:2014&#x27;},
+                          {&#x27;title&#x27;: &#x27;ISO 19115-3&#x27;}],
+     &#x27;referenceSystemInfo&#x27;: [{&#x27;referenceSystemIdentifier&#x27;: {&#x27;authority&#x27;: {&#x27;title&#x27;: &#x27;International &#x27;
+                                                                                   &#x27;Association &#x27;
+                                                                                   &#x27;of &#x27;
+                                                                                   &#x27;Oil &#x27;
+                                                                                   &#x27;and &#x27;
+                                                                                   &#x27;Gas &#x27;
+                                                                                   &#x27;Producers&#x27;},
+                                                            &#x27;code&#x27;: &#x27;EPSG::3112&#x27;,
+                                                            &#x27;description&#x27;: &#x27;Cartesian &#x27;
+                                                                           &#x27;2D &#x27;
+                                                                           &#x27;CS. &#x27;
+                                                                           &#x27;Axes: &#x27;
+                                                                           &#x27;easting, &#x27;
+                                                                           &#x27;northing &#x27;
+                                                                           &#x27;(E,N). &#x27;
+                                                                           &#x27;Orientations: &#x27;
+                                                                           &#x27;east, &#x27;
+                                                                           &#x27;north. &#x27;
+                                                                           &#x27;UoM: &#x27;
+                                                                           &#x27;m&#x27;}}]}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="accordion-item bblock-report" data-bblock-id="ogc.metacat.iso19115.bp17-084" id="bblock-ogc.metacat.iso19115.bp17-084">
                             <h2 class="accordion-header bblock-title">
                                 <button class="accordion-button collapsed" type="button"
@@ -85,8 +433,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-1"
-                                                            aria-expanded="false" aria-controls="uid-1"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-2"
+                                                            aria-expanded="false" aria-controls="uid-2"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -97,7 +445,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-1">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-2">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>

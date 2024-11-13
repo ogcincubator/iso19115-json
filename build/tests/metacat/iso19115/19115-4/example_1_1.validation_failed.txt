@@ -1,0 +1,266 @@
+Validation report for ogc.metacat.iso19115.19115-4 - 19115-4 WG draft
+Generated 2024-11-12T02:46:40.037931+00:00
+=== Files ===
+Using example_1_1.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: '@type' is a required property
+
+Failed validating 'required' in schema['allOf'][1]['allOf'][0]['properties']['properties']:
+    {'properties': {'@type': {'type': 'string'}},
+     'required': ['@type'],
+     'type': 'object'}
+
+On instance['properties']:
+    {'alternativeMetadataReference': [{'identifier': [{'code': '70105',
+                                                       'codeSpace': 'eCatId'}],
+                                       'title': 'Geoscience Australia '
+                                                'Products Catalogue (eCat) '
+                                                '– Short identifier for '
+                                                'metadata record.'}],
+     'contact': [{'party': [{'contactInfo': [{'address': [{'administrativeArea': 'ACT',
+                                                           'city': 'Canberra',
+                                                           'country': 'Australia',
+                                                           'deliveryPoint': ['Cnr '
+                                                                             'Jerrabomberra '
+                                                                             'Ave '
+                                                                             'and '
+                                                                             'Hindmarsh '
+                                                                             'Dr',
+                                                                             'GPO '
+                                                                             'Box '
+                                                                             '378'],
+                                                           'electronicMailAddress': ['clientservices@ga.gov.au'],
+                                                           'postalCode': '2601'}],
+                                              'phone': {'voice': '1800 800 '
+                                                                 '173'}}],
+                             'name': 'Commonwealth of Australia '
+                                     '(Geoscience Australia)',
+                             'type': 'CI_Organisation'}],
+                  'role': 'pointOfContact'}],
+     'dateInfo': {'creation': '2010-02-04T00:00:00',
+                  'revision': '2018-04-20T06:19:51'},
+     'defaultLocale': {'characterEncoding': 'utf8', 'language': 'eng'},
+     'identificationInfo': {'abstract': 'Data gathered in the field during '
+                                        'the sample collection phase of '
+                                        'the National Geochemical Survey '
+                                        'of Australia (NGSA) has been used '
+                                        'to compile the Preliminary Soil '
+                                        'pH map of Australia. \n'
+                                        '                    The map, '
+                                        'which was completed in late 2009, '
+                                        'offers a first-order estimate of '
+                                        'where acid or alkaline soil '
+                                        'conditions are likely to be '
+                                        'expected. \n'
+                                        '                    It provides '
+                                        'fundamental datasets that can be '
+                                        'used for mineral exploration and '
+                                        'resource potential evaluation, '
+                                        'environmental monitoring, landuse '
+                                        'policy development, and '
+                                        'geomedical studies into the '
+                                        'health of humans, animals and '
+                                        'plants.',
+                            'citation': {'ISBN': '9781921672620',
+                                         'citedResponsibleParty': [{'party': [{'contactInfo': [{'contactInstructions': '1st '
+                                                                                                                       'contact'}],
+                                                                               'name': 'de '
+                                                                                       'Caritat, '
+                                                                                       'P.',
+                                                                               'type': 'CI_Individual'}],
+                                                                    'role': 'author'},
+                                                                   {'party': [{'contactInfo': [{'contactInstructions': '2nd '
+                                                                                                                       'contact'}],
+                                                                               'name': 'Cooper, '
+                                                                                       'M.',
+                                                                               'type': 'CI_Individual'}],
+                                                                    'role': 'author'}],
+                                         'date': {'publication': '2010-01-01T00:00:00'},
+                                         'identifier': [{'code': 'https://pid.geoscience.gov.au/dataset/ga/70105',
+                                                         'codeSpace': 'Geoscience '
+                                                                      'Australia '
+                                                                      'Persistent '
+                                                                      'Identifier'}],
+                                         'series': {'issueIdentification': '2010'},
+                                         'title': 'Preliminary Soil pH map '
+                                                  'of Australia'},
+                            'defaultLocale': {'characterEncoding': 'utf8',
+                                              'language': 'eng'},
+                            'descriptiveKeywords': [{'keyword': ['Data '
+                                                                 'Package']},
+                                                    {'keyword': ['soils'],
+                                                     'type': 'theme'},
+                                                    {'keyword': ['mapping'],
+                                                     'type': 'theme'},
+                                                    {'keyword': ['environmental'],
+                                                     'type': 'theme'},
+                                                    {'keyword': ['mineral '
+                                                                 'exploration'],
+                                                     'type': 'theme'},
+                                                    {'keyword': ['AU']},
+                                                    {'keyword': ['Earth '
+                                                                 'Sciences'],
+                                                     'thesaurusName': {'ISBN': '9780642483584',
+                                                                       'citedResponsibleParty': [{'party': [{'contactInfo': [{'onlineResource': {'linkage': 'http://www.abs.gov.au/ausstats/abs@.nsf/Latestproducts/1297.0Main%20Features32008?opendocument&tabname=Summary&prodno=1297.0&issue=2008'}}],
+                                                                                                             'name': 'Australian '
+                                                                                                                     'Bureau '
+                                                                                                                     'of '
+                                                                                                                     'Statistics '
+                                                                                                                     '(ABS)',
+                                                                                                             'type': 'CI_Organisation'}],
+                                                                                                  'role': 'owner'}],
+                                                                       'date': {'publication': '2008-03-31T00:00:00+11:00'},
+                                                                       'onlineResource': {'linkage': 'http://www.abs.gov.au/ausstats/abs@.nsf/Latestproducts/1297.0Main%20Features32008?opendocument&tabname=Summary&prodno=1297.0&issue=2008'},
+                                                                       'title': 'Australian '
+                                                                                'and '
+                                                                                'New '
+                                                                                'Zealand '
+                                                                                'Standard '
+                                                                                'Research '
+                                                                                'Classification '
+                                                                                '(ANZSRC)'}},
+                                                    {'keyword': ['Published_External']}],
+                            'extent': {'description': 'Australia',
+                                       'geographicElement': [{'geographicIdentifier': {'code': 'Australia '
+                                                                                               'excluding '
+                                                                                               'external '
+                                                                                               'territories'},
+                                                              'type': 'EX_GeographicDescription'},
+                                                             {'eastBoundLongitude': 156,
+                                                              'northBoundLatitude': -10,
+                                                              'southBoundLatitude': -44,
+                                                              'type': 'EX_GeographicBoundingBox',
+                                                              'westBoundLongitude': 112}]},
+                            'pointOfContact': [{'party': [{'contactInfo': {'address': [{'administrativeArea': 'ACT',
+                                                                                        'city': 'Canberra',
+                                                                                        'country': 'Australia',
+                                                                                        'deliveryPoint': ['Cnr '
+                                                                                                          'Jerrabomberra '
+                                                                                                          'Ave '
+                                                                                                          'and '
+                                                                                                          'Hindmarsh '
+                                                                                                          'Dr '
+                                                                                                          'GPO '
+                                                                                                          'Box '
+                                                                                                          '378'],
+                                                                                        'electronicMailAddress': ['clientservices@ga.gov.au'],
+                                                                                        'postalCode': '2601'}],
+                                                                           'individual': [{'positionName': 'Manager '
+                                                                                                           'Client '
+                                                                                                           'Services'}],
+                                                                           'phone': {'voice': '1800 '
+                                                                                              '800 '
+                                                                                              '173'}},
+                                                           'name': 'Commonwealth '
+                                                                   'of '
+                                                                   'Australia '
+                                                                   '(Geoscience '
+                                                                   'Australia)',
+                                                           'type': 'CI_Organisation'}],
+                                                'role': 'custodian'},
+                                               {'party': [{'individual': [{'name': 'DE '
+                                                                                   'CARITAT, '
+                                                                                   'P'}],
+                                                           'name': 'Geoscience '
+                                                                   'Australia: '
+                                                                   'MNHD',
+                                                           'type': 'CI_Organisation'}],
+                                                'role': 'custodian'},
+                                               {'party': [{'name': 'Commonwealth '
+                                                                   'of '
+                                                                   'Australia '
+                                                                   '(Geoscience '
+                                                                   'Australia)',
+                                                           'type': 'CI_Organisation'}],
+                                                'role': 'owner'}],
+                            'resourceConstraints': [{'accessConstraints': 'license',
+                                                     'reference': {'alternateTitle': 'CC-BY',
+                                                                   'edition': '4.0',
+                                                                   'onlineResource': [{'linkage': 'http://creativecommons.org/licenses/',
+                                                                                       'protocol': 'WWW:LINK-1.0-http--link'}],
+                                                                   'title': 'Creative '
+                                                                            'Commons '
+                                                                            'Attribution '
+                                                                            '4.0 '
+                                                                            'International '
+                                                                            'Licence'},
+                                                     'type': 'MD_LegalConstraints',
+                                                     'useConstraints': 'license',
+                                                     'uuid': 'urn:ga-licences:232'},
+                                                    {'classification': 'unclassified',
+                                                     'reference': {'editionDate': '2018-11-01T00:00:00',
+                                                                   'onlineResource': [{'linkage': 'https://www.protectivesecurity.gov.au/Pages/default.aspx',
+                                                                                       'protocol': 'WWW:LINK-1.0-http--link'}],
+                                                                   'title': 'Australian '
+                                                                            'Government '
+                                                                            'Security '
+                                                                            'ClassificationSystem'},
+                                                     'type': 'MD_SecurityConstraints'}],
+                            'resourceFormat': [{'formatSpecificationCitation': {'citedResponsibleParty': [{'party': [{'name': 'ADOBE '
+                                                                                                                              'Inc',
+                                                                                                                      'type': 'CI_Organisation'}],
+                                                                                                           'role': 'rightsHolder'}],
+                                                                                'edition': '1.6',
+                                                                                'fileDecompressionTechnique': 'UNZIP',
+                                                                                'title': 'Portable '
+                                                                                         'Document '
+                                                                                         'Format '
+                                                                                         '(PDF)'}},
+                                               {'formatSpecificationCitation': {'edition': '1.0',
+                                                                                'fileDecompressionTechnique': 'UNZIP',
+                                                                                'title': 'Comma '
+                                                                                         'Delimitted '
+                                                                                         'Format '
+                                                                                         '(CSV)'}},
+                                               {'formatSpecificationCitation': {'edition': '1.0',
+                                                                                'fileDecompressionTechnique': 'UNZIP',
+                                                                                'title': 'ASCII '
+                                                                                         'text '
+                                                                                         '(TXT)'}}],
+                            'resourceMaintenance': [{'maintenanceAndUpdateFrequency': 'asNeeded'}],
+                            'spatialRepresentationType': ['textTable',
+                                                          'vector'],
+                            'spatialResolution': {'distance': {'uom': 'metre',
+                                                               'value': 250}},
+                            'topicCategory': 'geoscientificInformation'},
+     'metadataIdentifier': {'authority': {'title': 'GeoNetwork UUID'},
+                            'code': 'a05f7892-efb9-7506-e044-00144fdd4fa6',
+                            'codeSpace': 'urn:uuid:'},
+     'metadataLinkage': [{'function': 'completeMetadata',
+                          'linkage': 'https://ecat.ga.gov.au/geonetwork/srv/eng/catalog.search#/metadata/a05f7892-efb9-7506-e044-00144fdd4fa6'}],
+     'metadataProfile': [{'edition': 'Version 2.0, September 2018',
+                          'identifier': [{'code': 'https://pid.geoscience.gov.au/dataset/ga/122551'}],
+                          'title': 'Geoscience Australia Community '
+                                   'Metadata Profile of ISO 19115-1:2014'}],
+     'metadataStandard': [{'title': 'AU/NZS ISO 19115-1:2014'},
+                          {'title': 'ISO 19115-1:2014'},
+                          {'title': 'ISO 19115-3'}],
+     'referenceSystemInfo': [{'referenceSystemIdentifier': {'authority': {'title': 'International '
+                                                                                   'Association '
+                                                                                   'of '
+                                                                                   'Oil '
+                                                                                   'and '
+                                                                                   'Gas '
+                                                                                   'Producers'},
+                                                            'code': 'EPSG::3112',
+                                                            'description': 'Cartesian '
+                                                                           '2D '
+                                                                           'CS. '
+                                                                           'Axes: '
+                                                                           'easting, '
+                                                                           'northing '
+                                                                           '(E,N). '
+                                                                           'Orientations: '
+                                                                           'east, '
+                                                                           'north. '
+                                                                           'UoM: '
+                                                                           'm'}}]}
+=== End JSON Schema ===
+

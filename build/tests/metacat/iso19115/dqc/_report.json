@@ -1,0 +1,14 @@
+{
+  "title": "Validation report for ogc.metacat.iso19115.dqc - 19115-4 DQC",
+  "bblockName": "19115-4 DQC",
+  "bblockId": "ogc.metacat.iso19115.dqc",
+  "generated": "2024-11-12T02:46:39.648739+00:00",
+  "result": true,
+  "items": [],
+  "globalErrors": {},
+  "counts": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0
+  }
+}

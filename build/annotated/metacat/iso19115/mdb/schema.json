@@ -1,0 +1,1962 @@
+{
+  "$comment": "JSON Schema document created by ShapeChange - https://shapechange.net/",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://standards.iso.org/iso/19115/-4/mdb/1.0/mdb.json",
+  "$defs": {
+    "missing": {
+      "type": "string",
+      "description": "missing ref in schema"
+    },
+    "Abstract_Constraint": {
+      "$anchor": "Abstract_Constraint",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "@type"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "Abstract_DistributionUnion": {
+      "$anchor": "Abstract_DistributionUnion",
+      "$ref": "#/$defs/MD_Distribution"
+    },
+    "Abstract_Extent": {
+      "$anchor": "Abstract_Extent",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "@type"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "Abstract_FormatUnion": {
+      "$anchor": "Abstract_FormatUnion",
+      "$ref": "#/$defs/MD_Format"
+    },
+    "Abstract_LineageInformationUnion": {
+      "$anchor": "Abstract_LineageInformationUnion",
+      "$ref": "#/$defs/LI_Lineage"
+    },
+    "Abstract_Maintenance": {
+      "$anchor": "Abstract_Maintenance",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "@type"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "Abstract_Metadata": {
+      "$anchor": "Abstract_Metadata",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "@type"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "Abstract_MetadataExtension": {
+      "$anchor": "Abstract_MetadataExtension",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "@type"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "Abstract_ResourceDescriptionUnion": {
+      "$anchor": "Abstract_ResourceDescriptionUnion",
+      "$ref": "#/$defs/MD_DataIdentification"
+    },
+    "Abstract_StandardOrderProcess": {
+      "$anchor": "Abstract_StandardOrderProcess",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "@type"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "CI_Address": {
+      "$anchor": "CI_Address",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "deliveryPoint": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            },
+            "city": {
+              "type": "string"
+            },
+            "administrativeArea": {
+              "type": "string"
+            },
+            "postalCode": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            },
+            "electronicMailAddress": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "@type"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "CI_Citation": {
+      "$anchor": "CI_Citation",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "alternateTitle": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            },
+            "date": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_Date"
+              },
+              "uniqueItems": true
+            },
+            "edition": {
+              "type": "string"
+            },
+            "editionDate": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "identifier": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/MD_Identifier"
+              },
+              "uniqueItems": true
+            },
+            "citedResponsibleParty": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_Responsibility"
+              },
+              "uniqueItems": true
+            },
+            "presentationForm": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_PresentationFormCode"
+              },
+              "uniqueItems": true
+            },
+            "series": {
+              "$ref": "#/$defs/CI_Series"
+            },
+            "otherCitationDetails": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            },
+            "ISBN": {
+              "type": "string"
+            },
+            "ISSN": {
+              "type": "string"
+            },
+            "onlineResource": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_OnlineResource"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "@type",
+            "title"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "CI_Contact": {
+      "$anchor": "CI_Contact",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_Telephone"
+              },
+              "uniqueItems": true
+            },
+            "address": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_Address"
+              },
+              "uniqueItems": true
+            },
+            "onlineResource": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_OnlineResource"
+              },
+              "uniqueItems": true
+            },
+            "hoursOfService": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            },
+            "contactInstructions": {
+              "type": "string"
+            },
+            "contactType": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "@type"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "CI_Date": {
+      "$anchor": "CI_Date",
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dateType": {
+          "$ref": "#/$defs/CI_DateTypeCode"
+        }
+      },
+      "required": [
+        "date",
+        "dateType"
+      ]
+    },
+    "CI_DateTypeCode": {
+      "$anchor": "CI_DateTypeCode",
+      "$ref": "#/$defs/missing"
+    },
+    "CI_Individual": {
+      "$anchor": "CI_Individual",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "contactInfo": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_Contact"
+              },
+              "uniqueItems": true
+            },
+            "partyIdentifier": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/MD_Identifier"
+              },
+              "uniqueItems": true
+            },
+            "positionName": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "@type"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "CI_OnLineFunctionCode": {
+      "$anchor": "CI_OnLineFunctionCode",
+      "$ref": "#/$defs/missing"
+    },
+    "CI_OnlineResource": {
+      "$anchor": "CI_OnlineResource",
+      "type": "object",
+      "properties": {
+        "linkage": {
+          "type": "string"
+        },
+        "protocol": {
+          "type": "string"
+        },
+        "applicationProfile": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "function": {
+          "$ref": "#/$defs/CI_OnLineFunctionCode"
+        },
+        "protocolRequest": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "linkage"
+      ]
+    },
+    "CI_Organisation": {
+      "$anchor": "CI_Organisation",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "contactInfo": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_Contact"
+              },
+              "uniqueItems": true
+            },
+            "partyIdentifier": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/MD_Identifier"
+              },
+              "uniqueItems": true
+            },
+            "individual": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_Individual"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "@type"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "CI_PartyUnion": {
+      "$anchor": "CI_PartyUnion",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/CI_Individual"
+        },
+        {
+          "$ref": "#/$defs/CI_Organisation"
+        }
+      ]
+    },
+    "CI_PresentationFormCode": {
+      "$anchor": "CI_PresentationFormCode",
+      "$ref": "#/$defs/missing"
+    },
+    "CI_Responsibility": {
+      "$anchor": "CI_Responsibility",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "party-CI_Individual": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_Individual"
+              },
+              "uniqueItems": true
+            },
+            "party-CI_Organisation": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_Organisation"
+              },
+              "uniqueItems": true
+            },
+            "role": {
+              "$ref": "#/$defs/CI_RoleCode"
+            },
+            "extent": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/EX_Extent"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "@type",
+            "role"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "CI_RoleCode": {
+      "$anchor": "CI_RoleCode",
+      "$ref": "#/$defs/missing"
+    },
+    "CI_Series": {
+      "$anchor": "CI_Series",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "issueIdentification": {
+          "type": "string"
+        },
+        "page": {
+          "type": "string"
+        }
+      }
+    },
+    "CI_Telephone": {
+      "$anchor": "CI_Telephone",
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": "string"
+        },
+        "numberType": {
+          "$ref": "#/$defs/CI_TelephoneTypeCode"
+        }
+      },
+      "required": [
+        "number"
+      ]
+    },
+    "CI_TelephoneTypeCode": {
+      "$anchor": "CI_TelephoneTypeCode",
+      "$ref": "#/$defs/missing"
+    },
+    "CountryCode": {
+      "$anchor": "CountryCode",
+      "$ref": "#/$defs/missing"
+    },
+    "DCPList": {
+      "$anchor": "DCPList",
+      "$ref": "#/$defs/missing"
+    },
+    "DS_AssociationTypeCode": {
+      "$anchor": "DS_AssociationTypeCode",
+      "$ref": "#/$defs/missing"
+    },
+    "DS_InitiativeTypeCode": {
+      "$anchor": "DS_InitiativeTypeCode",
+      "$ref": "#/$defs/missing"
+    },
+    "EX_Extent": {
+      "$anchor": "EX_Extent",
+      "allOf": [
+        {
+          "$ref": "#/$defs/Abstract_Extent"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "geographicElement-EX_GeographicBoundingBox": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uri-reference"
+              },
+              "uniqueItems": true
+            },
+            "geographicElement-EX_GeographicDescription": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uri-reference"
+              },
+              "uniqueItems": true
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "EX_GeographicBoundingBox": {
+      "$anchor": "EX_GeographicBoundingBox",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "extentTypeCode": {
+              "type": "boolean",
+              "default": false
+            },
+            "westBoundLongitude": {
+              "type": "number"
+            },
+            "eastBoundLongitude": {
+              "type": "number"
+            },
+            "southBoundLatitude": {
+              "type": "number"
+            },
+            "northBoundLatitude": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "@type",
+            "eastBoundLongitude",
+            "northBoundLatitude",
+            "southBoundLatitude",
+            "westBoundLongitude"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "EX_GeographicDescription": {
+      "$anchor": "EX_GeographicDescription",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "extentTypeCode": {
+              "type": "boolean",
+              "default": false
+            },
+            "geographicIdentifier": {
+              "$ref": "#/$defs/MD_Identifier"
+            }
+          },
+          "required": [
+            "@type",
+            "geographicIdentifier"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "EX_GeographicExtentUnion": {
+      "$anchor": "EX_GeographicExtentUnion",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/EX_GeographicBoundingBox"
+        },
+        {
+          "$ref": "#/$defs/EX_GeographicDescription"
+        }
+      ]
+    },
+    "KeywordTypeCode-Bio": {
+      "$anchor": "KeywordTypeCode-Bio",
+      "$ref": "#/$defs/missing"
+    },
+    "LI_Lineage": {
+      "$anchor": "LI_Lineage",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "source": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/LI_Source"
+              },
+              "uniqueItems": true
+            },
+            "statement": {
+              "type": "string"
+            },
+            "scope": {
+              "$ref": "#/$defs/MD_Scope"
+            },
+            "additionalDocumentation": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_Citation"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "@type"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "LI_Source": {
+      "$anchor": "LI_Source",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "sourceReferenceSystem": {
+              "$ref": "#/$defs/MD_ReferenceSystem"
+            },
+            "sourceCitation": {
+              "$ref": "#/$defs/CI_Citation"
+            },
+            "sourceMetadata": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_Citation"
+              },
+              "uniqueItems": true
+            },
+            "scope": {
+              "$ref": "#/$defs/MD_Scope"
+            }
+          },
+          "required": [
+            "@type"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "LanguageCode": {
+      "$anchor": "LanguageCode",
+      "$ref": "#/$defs/missing"
+    },
+    "MD_CellGeometryCode": {
+      "$anchor": "MD_CellGeometryCode",
+      "$ref": "#/$defs/missing"
+    },
+    "MD_CharacterSetCode": {
+      "$anchor": "MD_CharacterSetCode",
+      "$ref": "#/$defs/missing"
+    },
+    "MD_ClassificationCode": {
+      "$anchor": "MD_ClassificationCode",
+      "$ref": "#/$defs/missing"
+    },
+    "MD_Constraints": {
+      "$anchor": "MD_Constraints",
+      "allOf": [
+        {
+          "$ref": "#/$defs/Abstract_Constraint"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "properties": {
+              "type": "object",
+              "properties": {
+                "useLimitation": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "uniqueItems": true
+                },
+                "constraintApplicationScope": {
+                  "$ref": "#/$defs/MD_Scope"
+                },
+                "reference": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/CI_Citation"
+                  },
+                  "uniqueItems": true
+                },
+                "responsibleParty": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/CI_Responsibility"
+                  },
+                  "uniqueItems": true
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "MD_CoverageContentTypeCode": {
+      "$anchor": "MD_CoverageContentTypeCode",
+      "$ref": "#/$defs/missing"
+    },
+    "MD_DataIdentification": {
+      "$anchor": "MD_DataIdentification",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "citation": {
+              "$ref": "#/$defs/CI_Citation"
+            },
+            "abstract": {
+              "type": "string"
+            },
+            "purpose": {
+              "type": "string"
+            },
+            "credit": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            },
+            "status": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/MD_ProgressCode"
+              },
+              "uniqueItems": true
+            },
+            "pointOfContact": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_Responsibility"
+              },
+              "uniqueItems": true
+            },
+            "spatialRepresentationType": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/MD_SpatialRepresentationTypeCode"
+              },
+              "uniqueItems": true
+            },
+            "temporalResolution": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "duration"
+              },
+              "uniqueItems": true
+            },
+            "topicCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/MD_TopicCategoryCode"
+              },
+              "uniqueItems": true
+            },
+            "extent": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/EX_Extent"
+              },
+              "uniqueItems": true
+            },
+            "additionalDocumentation": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_Citation"
+              },
+              "uniqueItems": true
+            },
+            "processingLevel": {
+              "$ref": "#/$defs/MD_Identifier"
+            },
+            "theTaxonomySystem": {
+              "type": "string",
+              "format": "uri-reference"
+            },
+            "resourceConstraints-MD_Constraints": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/MD_Constraints"
+              },
+              "uniqueItems": true
+            },
+            "resourceConstraints-MD_LegalConstraints": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/MD_LegalConstraints"
+              },
+              "uniqueItems": true
+            },
+            "resourceConstraints-MD_SecurityConstraints": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/MD_SecurityConstraints"
+              },
+              "uniqueItems": true
+            },
+            "resourceFormat": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/MD_Format"
+              },
+              "uniqueItems": true
+            },
+            "descriptiveKeywords": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/MD_Keywords"
+              },
+              "uniqueItems": true
+            },
+            "resourceMaintenance": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/MD_MaintenanceInformation"
+              },
+              "uniqueItems": true
+            },
+            "resourceSpecificUsage": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uri-reference"
+              },
+              "uniqueItems": true
+            },
+            "defaultLocale": {
+              "$ref": "#/$defs/PT_Locale"
+            },
+            "otherLocale": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/PT_Locale"
+              },
+              "uniqueItems": true
+            },
+            "environmentDescription": {
+              "type": "string"
+            },
+            "supplementalInformation": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "@type",
+            "abstract",
+            "citation"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "MD_DatatypeCode": {
+      "$anchor": "MD_DatatypeCode",
+      "$ref": "#/$defs/missing"
+    },
+    "MD_DigitalTransferOptions": {
+      "$anchor": "MD_DigitalTransferOptions",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "unitsOfDistribution": {
+              "type": "string"
+            },
+            "transferSize": {
+              "type": "number"
+            },
+            "onLine": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_OnlineResource"
+              },
+              "uniqueItems": true
+            },
+            "offLine": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/MD_Medium"
+              },
+              "uniqueItems": true
+            },
+            "transferFrequency": {},
+            "distributionFormat": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/MD_Format"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "@type"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "MD_DimensionNameTypeCode": {
+      "$anchor": "MD_DimensionNameTypeCode",
+      "$ref": "#/$defs/missing"
+    },
+    "MD_Distribution": {
+      "$anchor": "MD_Distribution",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "distributor": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "uri-reference"
+                  },
+                  {
+                    "$ref": "#/$defs/MD_Distributor"
+                  }
+                ]
+              },
+              "uniqueItems": true
+            },
+            "transferOptions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/MD_DigitalTransferOptions"
+              },
+              "uniqueItems": true
+            },
+            "distributionFormat": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "uri-reference"
+                  },
+                  {
+                    "$ref": "#/$defs/MD_Format"
+                  }
+                ]
+              },
+              "uniqueItems": true
+            },
+            "description": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "@type"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "MD_Distributor": {
+      "$anchor": "MD_Distributor",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "distributionFormat-MD_Format": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uri-reference"
+              },
+              "uniqueItems": true
+            },
+            "distributorTransferOptions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/MD_DigitalTransferOptions"
+              },
+              "uniqueItems": true
+            },
+            "distributorContact": {
+              "$ref": "#/$defs/CI_Responsibility"
+            }
+          },
+          "required": [
+            "@type",
+            "distributorContact"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "MD_Format": {
+      "$anchor": "MD_Format",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "formatDistributor": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/MD_Distributor"
+              },
+              "uniqueItems": true
+            },
+            "formatSpecificationCitation": {
+              "$ref": "#/$defs/CI_Citation"
+            },
+            "amendmentNumber": {
+              "type": "string"
+            },
+            "fileDecompressionTechnique": {
+              "type": "string"
+            },
+            "medium": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/MD_Medium"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "@type",
+            "formatSpecificationCitation"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "MD_GeometricObjectTypeCode": {
+      "$anchor": "MD_GeometricObjectTypeCode",
+      "$ref": "#/$defs/missing"
+    },
+    "MD_IdentificationUnion": {
+      "$anchor": "MD_IdentificationUnion",
+      "$ref": "#/$defs/MD_DataIdentification"
+    },
+    "MD_Identifier": {
+      "$anchor": "MD_Identifier",
+      "type": "object",
+      "properties": {
+        "authority": {
+          "$ref": "#/$defs/CI_Citation"
+        },
+        "code": {
+          "type": "string"
+        },
+        "codeSpace": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code"
+      ]
+    },
+    "MD_ImagingConditionCode": {
+      "$anchor": "MD_ImagingConditionCode",
+      "$ref": "#/$defs/missing"
+    },
+    "MD_KeywordTypeCode": {
+      "$anchor": "MD_KeywordTypeCode",
+      "$ref": "#/$defs/missing"
+    },
+    "MD_Keywords": {
+      "$anchor": "MD_Keywords",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "keyword": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            },
+            "type": {
+              "$ref": "#/$defs/MD_KeywordTypeCode"
+            },
+            "thesaurusName": {
+              "$ref": "#/$defs/CI_Citation"
+            }
+          },
+          "required": [
+            "@type",
+            "keyword"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "MD_LegalConstraints": {
+      "$anchor": "MD_LegalConstraints",
+      "allOf": [
+        {
+          "$ref": "#/$defs/MD_Constraints"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "properties": {
+              "type": "object",
+              "properties": {
+                "accessConstraints": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/MD_RestrictionCode"
+                  },
+                  "uniqueItems": true
+                },
+                "useConstraints": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/MD_RestrictionCode"
+                  },
+                  "uniqueItems": true
+                },
+                "otherConstraints": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "uniqueItems": true
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "MD_MaintenanceFrequencyCode": {
+      "$anchor": "MD_MaintenanceFrequencyCode",
+      "$ref": "#/$defs/missing"
+    },
+    "MD_MaintenanceInformation": {
+      "$anchor": "MD_MaintenanceInformation",
+      "allOf": [
+        {
+          "$ref": "#/$defs/Abstract_Maintenance"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "properties": {
+              "type": "object",
+              "properties": {
+                "maintenanceAndUpdateFrequency": {
+                  "$ref": "#/$defs/MD_MaintenanceFrequencyCode"
+                },
+                "maintenanceDate": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/CI_Date"
+                  },
+                  "uniqueItems": true
+                },
+                "userDefinedMaintenanceFrequency": {},
+                "maintenanceScope": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/MD_Scope"
+                  },
+                  "uniqueItems": true
+                },
+                "maintenanceNote": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "uniqueItems": true
+                },
+                "contact": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/CI_Responsibility"
+                  },
+                  "uniqueItems": true
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "MD_Medium": {
+      "$anchor": "MD_Medium",
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/CI_Citation"
+        },
+        "density": {
+          "type": "integer"
+        },
+        "densityUnits": {
+          "type": "string"
+        },
+        "volumes": {
+          "type": "integer"
+        },
+        "mediumFormat": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/MD_MediumFormatCode"
+          },
+          "uniqueItems": true
+        },
+        "mediumNote": {
+          "type": "string"
+        },
+        "identifier": {
+          "$ref": "#/$defs/MD_Identifier"
+        }
+      }
+    },
+    "MD_MediumFormatCode": {
+      "$anchor": "MD_MediumFormatCode",
+      "$ref": "#/$defs/missing"
+    },
+    "MD_Metadata": {
+      "$anchor": "MD_Metadata",
+      "allOf": [
+        {
+          "$ref": "#/$defs/Abstract_Metadata"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "properties": {
+              "type": "object",
+              "properties": {
+                "metadataConstraints": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/MD_Constraints"
+                  },
+                  "uniqueItems": true
+                },
+                "resourceLineage": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/LI_Lineage"
+                  },
+                  "uniqueItems": true
+                },
+                "distributionInfo": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/MD_Distribution"
+                  },
+                  "uniqueItems": true
+                },
+                "identificationInfo-MD_DataIdentification": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/MD_DataIdentification"
+                  },
+                  "uniqueItems": true
+                },
+                "metadataMaintenance": {
+                  "$ref": "#/$defs/MD_MaintenanceInformation"
+                },
+                "metadataScope": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uri-reference"
+                  },
+                  "uniqueItems": true
+                },
+                "dataQualityInfo": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "https://ogcincubator.github.io/iso19115-json/build/annotated/metacat/iso19115/dqc/schema.json#/$defs/DataQuality"
+                  },
+                  "uniqueItems": true
+                },
+                "metadataIdentifier": {
+                  "$ref": "#/$defs/MD_Identifier"
+                },
+                "defaultLocale": {
+                  "$ref": "#/$defs/PT_Locale"
+                },
+                "parentMetadata": {
+                  "$ref": "#/$defs/CI_Citation"
+                },
+                "contact": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "$ref": "#/$defs/CI_Responsibility"
+                  },
+                  "uniqueItems": true
+                },
+                "dateInfo": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "$ref": "#/$defs/CI_Date"
+                  },
+                  "uniqueItems": true
+                },
+                "metadataStandard": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/CI_Citation"
+                  },
+                  "uniqueItems": true
+                },
+                "metadataProfile": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/CI_Citation"
+                  },
+                  "uniqueItems": true
+                },
+                "alternativeMetadataReference": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/CI_Citation"
+                  },
+                  "uniqueItems": true
+                },
+                "otherLocale": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/PT_Locale"
+                  },
+                  "uniqueItems": true
+                },
+                "metadataLinkage": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/CI_OnlineResource"
+                  },
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "contact",
+                "dateInfo"
+              ]
+            }
+          },
+          "required": [
+            "properties"
+          ]
+        }
+      ]
+    },
+    "MD_MetadataScope": {
+      "$anchor": "MD_MetadataScope",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "resourceScope": {
+              "$ref": "#/$defs/MD_ScopeCode"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "@type",
+            "resourceScope"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "MD_ObligationCode": {
+      "$anchor": "MD_ObligationCode",
+      "type": "string",
+      "enum": [
+        "mandatory",
+        "optional",
+        "conditional"
+      ]
+    },
+    "MD_ProgressCode": {
+      "$anchor": "MD_ProgressCode",
+      "$ref": "#/$defs/missing"
+    },
+    "MD_ReferenceSystem": {
+      "$anchor": "MD_ReferenceSystem",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "referenceSystemIdentifier": {
+              "$ref": "#/$defs/MD_Identifier"
+            },
+            "crs": {},
+            "coordinateEpoch": {},
+            "referenceSystemType": {
+              "$ref": "#/$defs/MD_ReferenceSystemTypeCode"
+            }
+          },
+          "required": [
+            "@type"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "MD_ReferenceSystemTypeCode": {
+      "$anchor": "MD_ReferenceSystemTypeCode",
+      "$ref": "#/$defs/missing"
+    },
+    "MD_RepresentativeFraction": {
+      "$anchor": "MD_RepresentativeFraction",
+      "type": "object",
+      "properties": {
+        "denominator": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "denominator"
+      ]
+    },
+    "MD_RestrictionCode": {
+      "$anchor": "MD_RestrictionCode",
+      "$ref": "#/$defs/missing"
+    },
+    "MD_Scope": {
+      "$anchor": "MD_Scope",
+      "type": "object",
+      "properties": {
+        "level": {
+          "$ref": "#/$defs/MD_ScopeCode"
+        },
+        "extent": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/EX_Extent"
+          },
+          "uniqueItems": true
+        },
+        "levelDescription": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/MD_ScopeDescription"
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "level"
+      ]
+    },
+    "MD_ScopeCode": {
+      "$anchor": "MD_ScopeCode",
+      "$ref": "#/$defs/missing"
+    },
+    "MD_ScopeDescription": {
+      "$anchor": "MD_ScopeDescription",
+      "type": "string"
+    },
+    "MD_SecurityConstraints": {
+      "$anchor": "MD_SecurityConstraints",
+      "allOf": [
+        {
+          "$ref": "#/$defs/MD_Constraints"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "properties": {
+              "type": "object",
+              "properties": {
+                "classification": {
+                  "$ref": "#/$defs/MD_ClassificationCode"
+                },
+                "userNote": {
+                  "type": "string"
+                },
+                "classificationSystem": {
+                  "type": "string"
+                },
+                "handlingDescription": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "classification"
+              ]
+            }
+          },
+          "required": [
+            "properties"
+          ]
+        }
+      ]
+    },
+    "MD_SpatialRepresentationTypeCode": {
+      "$anchor": "MD_SpatialRepresentationTypeCode",
+      "$ref": "#/$defs/missing"
+    },
+    "MD_TopicCategoryCode": {
+      "$anchor": "MD_TopicCategoryCode",
+      "type": "string",
+      "enum": [
+        "farming",
+        "biota",
+        "boundaries",
+        "climatologyMeteorologyAtmosphere",
+        "economy",
+        "elevation",
+        "environment",
+        "geoscientificInformation",
+        "health",
+        "imageryBaseMapsEarthCover",
+        "intelligenceMilitary",
+        "inlandWaters",
+        "location",
+        "oceans",
+        "planningCadastre",
+        "society",
+        "structure",
+        "transportation",
+        "utilitiesCommunication",
+        "extraTerrestrial",
+        "disaster"
+      ]
+    },
+    "MD_TopologyLevelCode": {
+      "$anchor": "MD_TopologyLevelCode",
+      "$ref": "#/$defs/missing"
+    },
+    "MD_Usage": {
+      "$anchor": "MD_Usage",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "specificUsage": {
+              "type": "string"
+            },
+            "usageDateTime": {
+              "type": "array",
+              "uniqueItems": true
+            },
+            "userDeterminedLimitations": {
+              "type": "string"
+            },
+            "userContactInfo": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_Responsibility"
+              },
+              "uniqueItems": true
+            },
+            "response": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            },
+            "additionalDocumentation": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_Citation"
+              },
+              "uniqueItems": true
+            },
+            "identifiedIssues": {
+              "$ref": "#/$defs/CI_Citation"
+            }
+          },
+          "required": [
+            "@type",
+            "specificUsage"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "PT_Locale": {
+      "$anchor": "PT_Locale",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "language": {
+              "$ref": "#/$defs/LanguageCode"
+            },
+            "country": {
+              "$ref": "#/$defs/CountryCode"
+            },
+            "characterEncoding": {
+              "$ref": "#/$defs/MD_CharacterSetCode"
+            }
+          },
+          "required": [
+            "@type",
+            "characterEncoding",
+            "language"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "SV_CouplingType": {
+      "$anchor": "SV_CouplingType",
+      "$ref": "#/$defs/missing"
+    },
+    "SV_ParameterDirection": {
+      "$anchor": "SV_ParameterDirection",
+      "type": "string",
+      "enum": [
+        "in",
+        "out",
+        "in/out"
+      ]
+    },
+    "TaxonomicClassification": {
+      "$anchor": "TaxonomicClassification",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "commonName": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            },
+            "taxonRankName": {
+              "type": "string"
+            },
+            "taxonRankValue": {
+              "type": "string"
+            },
+            "hierarchialClass": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/TaxonomicClassification"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "@type",
+            "taxonRankName",
+            "taxonRankValue"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "TaxonomySystem": {
+      "$anchor": "TaxonomySystem",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "classificationSystemAuthority": {
+              "$ref": "#/$defs/CI_Citation"
+            },
+            "classificationSystemModifications": {
+              "type": "string"
+            },
+            "generalTaxonomicScope": {
+              "type": "string"
+            },
+            "identificationReference": {
+              "$ref": "#/$defs/CI_Citation"
+            },
+            "observer": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CI_Responsibility"
+              },
+              "uniqueItems": true
+            },
+            "identificationTaxonomicProcedures": {
+              "type": "string"
+            },
+            "identificationTaxonomicCompleteness": {
+              "type": "string"
+            },
+            "theVouchers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uri-reference"
+              },
+              "uniqueItems": true
+            },
+            "theTaxonomicClassification": {
+              "type": "string",
+              "format": "uri-reference"
+            }
+          },
+          "required": [
+            "@type",
+            "classificationSystemAuthority",
+            "identificationReference",
+            "identificationTaxonomicProcedures",
+            "theTaxonomicClassification"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    },
+    "Vouchers": {
+      "$anchor": "Vouchers",
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "specimen": {
+              "type": "string"
+            },
+            "repository": {
+              "$ref": "#/$defs/CI_Responsibility"
+            }
+          },
+          "required": [
+            "@type",
+            "repository",
+            "specimen"
+          ]
+        }
+      },
+      "required": [
+        "properties"
+      ]
+    }
+  }
+}

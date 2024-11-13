@@ -1,5 +1,8 @@
 # workspace for building and testing ISO 19115 JSON schemas
 
+[building block view](https://ogcincubator.github.io/iso19115-json/)
+
+
 There are multiple options and starting points for this activity, such as:
 
 - https://docs.ogc.org/bp/17-084r1/17-084r1.html
