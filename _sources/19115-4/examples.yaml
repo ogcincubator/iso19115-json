@@ -15,3 +15,6 @@ examples:
       - language: json
         # Reference to file
         ref: examples/GA_Soils_PHPlusDQ_edit.json
+      - language: xml
+# Reference to file
+        ref: examples/GA_Soils_PHPlusDQ.xml

@@ -18,7 +18,7 @@
     "conformsTo": ["https://standards.iso.org/iso/19115/-4/0.1/core", "https://standards.iso.org/iso/19115/-4/0.1/data-quality-core", "https://standards.iso.org/iso/19115/-4/0.1/no-ref"],
     "type": "Feature",
     "id": "a05f7892-efb9-7506-e044-00144fdd4fa6",
-    "geometry": {"type": "Polygon", "coordinates": [[112, -44], [156, -44], [156, -10], [112, -10], [112, -44]]},
+    "geometry": {"type": "Polygon", "coordinates": [][[112, -44], [156, -44], [156, -10], [112, -10], [112, -44]]]},
     "bbox": [112, -44, 156, -10],
     "properties": {
         "metadataIdentifier": {"authority": {"title": "GeoNetwork UUID"}, "code": "a05f7892-efb9-7506-e044-00144fdd4fa6", "codeSpace": "urn:uuid:"},
